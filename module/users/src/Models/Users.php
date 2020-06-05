@@ -119,9 +119,11 @@ class Users extends Authenticatable
         return $this->hasMany(UsersMeta::class);
     }
 
-    public function getReferral()
+    public function referral()
     {
-        return $this->belongsTo(UserRefferals::class, 'user_id', 'id');
+        return $this->belongsToMany(UserRefferals::class, 'user_referrals', 'user_id', 'referral_id');
     }
+
+
 
 }

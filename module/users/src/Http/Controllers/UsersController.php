@@ -75,11 +75,7 @@ class UsersController extends BaseController
             ];
             $this->users->update($data_2,$user->id);
             //Thêm vào bảng user referral
-            $data_3 = [
-                'user_id'=>$user->id,
-                'referral_id'=> $data['parent']
-            ];
-            $this->refer->create($data_3);
+            $user->referral()->sync($data['parent']);
             //Đồng bộ quyền cho user
 			$user->roles()->sync($data['role']);
 
@@ -140,6 +136,8 @@ class UsersController extends BaseController
                 ];
                 $this->users->update($data_2,$id);
             }
+            //Thêm vào bảng user referral
+            $user->referral()->sync($data['parent']);
 			//cập nhật đồng bộ quyền
 			$user->roles()->sync($data['role']);
 			return redirect()->back()->with(FlashMessage::returnMessage('edit'));
