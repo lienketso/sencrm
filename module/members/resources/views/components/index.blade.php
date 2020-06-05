@@ -63,7 +63,6 @@
                     </li>
                 </ul>
 
-
                 <div id="chart" style="height:500px;padding-bottom: 80px;" class="orgChart">
                     <div class="zoom">
                         <span class="zoom_control">+</span>

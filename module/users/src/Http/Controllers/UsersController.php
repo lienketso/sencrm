@@ -12,15 +12,18 @@ use Barryvdh\Debugbar\Controllers\BaseController;
 use Base\Supports\FlashMessage;
 use Users\Http\Requests\UserCreateRequest;
 use Users\Http\Requests\UserEditRequest;
+use Users\Repositories\UsersReferralRepositories;
 use Users\Repositories\UsersRepository;
 
 class UsersController extends BaseController
 {
 	protected $users;
+	protected $refer;
 	
-	public function __construct(UsersRepository $repository)
+	public function __construct(UsersRepository $repository, UsersReferralRepositories $referalrepository)
 	{
 		$this->users = $repository;
+		$this->refer = $referalrepository;
 	}
 	
 	public function getSetting()
@@ -71,6 +74,12 @@ class UsersController extends BaseController
                 'code_name'=>$codename.$user->id
             ];
             $this->users->update($data_2,$user->id);
+            //Thêm vào bảng user referral
+            $data_3 = [
+                'user_id'=>$user->id,
+                'referral_id'=> $data['parent']
+            ];
+            $this->refer->create($data_3);
             //Đồng bộ quyền cho user
 			$user->roles()->sync($data['role']);
 

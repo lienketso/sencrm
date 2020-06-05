@@ -18,7 +18,7 @@ class CreateUserReferralsTable extends Migration
             $table->integer('referral_id')->default(0);
             $table->integer('user_id')->default(0);
             $table->string('email')->nullable();
-            $table->integer('tries');
+            $table->integer('tries')->default(0);
             $table->timestamps();
         });
     }
