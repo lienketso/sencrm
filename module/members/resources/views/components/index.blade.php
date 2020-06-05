@@ -43,7 +43,7 @@
         .node label {
             font-family: tahoma;
             font-size: 14px;
-            line-height: 11px;
+            line-height: 20px;
             padding-top: 30px;
         }
     </style>

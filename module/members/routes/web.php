@@ -15,9 +15,9 @@ $moduleRoute = 'members';
 //Backend
 Route::group(['prefix' => $adminRoute], function (Router $router) use ($adminRoute, $moduleRoute) {
     $router->group(['prefix' => $moduleRoute], function (Router $router) use ($adminRoute, $moduleRoute) {
-        $router->get('members', 'MembersController@getIndex')
+        $router->get('network', 'MembersController@getIndex')
             ->name('nqadmin::members.index.get');
-//            ->middleware('permission:user_index');
+//            ->middleware('permission:member_index');
     });
 });
 

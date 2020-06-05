@@ -18,7 +18,7 @@ class JOrgChart
 
         //[1]=>[2 ,3]
         $this->recursiveTree($users, $this->chain[$referral_id]);
-
+        
         return ['tree_array' => $this->chain, 'tree_string' => $this->tree_string];
     }
 

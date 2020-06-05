@@ -84,6 +84,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
 <script src="{{ asset('adminux/bootstrap-confirmation/init.js') }}" type="text/javascript"></script>
 
+<script src="{{asset('assets/ckfinder/ckfinder.js')}}"></script>
 
 @yield('js')
 @yield('js-init')
@@ -95,6 +96,34 @@
 <script src="{{ asset('adminux/parsleyjs/parsley.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('adminux/parsleyjs/parsley-init.js') }}" type="text/javascript"></script>
 
+
+	<script type="text/javascript">
+		var button1 = document.getElementById( 'ckfinder-popup-1' );
+		button1.onclick = function() {
+			selectFileWithCKFinder( 'ckfinder-input-1' );
+		};
+		function selectFileWithCKFinder( elementId ) {
+			CKFinder.popup( {
+				chooseFiles: true,
+				width: 800,
+				height: 600,
+				onInit: function( finder ) {
+					finder.on( 'files:choose', function( evt ) {
+						var file = evt.data.files.first();
+						var output = document.getElementById( elementId );
+						output.value = file.getUrl();
+					} );
+
+					finder.on( 'file:choose:resizedImage', function( evt ) {
+						var output = document.getElementById( elementId );
+						output.value = evt.data.resizedUrl;
+					} );
+				}
+			} );
+		}
+
+
+</script>
 <script>
     function check_all() {
         var fmobj = document.theForm;

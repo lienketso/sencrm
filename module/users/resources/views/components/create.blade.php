@@ -184,7 +184,12 @@
 							</div>
 						</div>
 						
-						@include('nqadmin-dashboard::components.thumbnail')
+						<div class="form-group">
+							<label>Ảnh đại diện</label>
+							<input type="text" name="thumbnail" id="ckfinder-input-1">
+							<button type="button" id="ckfinder-popup-1">Upload</button>
+							<img src="" alt="" id="imgreview">
+						</div>
 					</div>
 				</div>
 			</form>

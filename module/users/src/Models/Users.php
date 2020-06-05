@@ -124,6 +124,4 @@ class Users extends Authenticatable
         return $this->belongsToMany(UserRefferals::class, 'user_referrals', 'user_id', 'referral_id');
     }
 
-
-
 }
