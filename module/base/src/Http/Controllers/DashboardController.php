@@ -10,7 +10,6 @@ namespace Base\Http\Controllers;
 
 use Barryvdh\Debugbar\Controllers\BaseController;
 use Illuminate\Support\Facades\Mail;
-use Post\Repositories\PostRepository;
 use Users\Models\Users;
 use Users\Repositories\UsersRepository;
 

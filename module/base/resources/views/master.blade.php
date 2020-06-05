@@ -91,7 +91,6 @@
 @stack('js')
 @stack('js-init')
 
-
 <!-- parsley js -->
 <script src="{{ asset('adminux/parsleyjs/parsley.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('adminux/parsleyjs/parsley-init.js') }}" type="text/javascript"></script>
@@ -121,7 +120,6 @@
 				}
 			} );
 		}
-
 
 </script>
 <script>
