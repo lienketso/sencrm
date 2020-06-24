@@ -10,6 +10,7 @@ namespace Users\Http\Controllers;
 use Acl\Repositories\RoleRepository;
 use Barryvdh\Debugbar\Controllers\BaseController;
 use Base\Supports\FlashMessage;
+use History\Repositories\HistoryRepositories;
 use Users\Http\Requests\UserCreateRequest;
 use Users\Http\Requests\UserEditRequest;
 use Users\Repositories\UsersReferralRepositories;
@@ -19,11 +20,13 @@ class UsersController extends BaseController
 {
 	protected $users;
 	protected $refer;
+	protected $his;
 	
-	public function __construct(UsersRepository $repository, UsersReferralRepositories $referalrepository)
+	public function __construct(UsersRepository $repository, UsersReferralRepositories $referalrepository, HistoryRepositories $historyRepositories)
 	{
 		$this->users = $repository;
 		$this->refer = $referalrepository;
+		$this->his = $historyRepositories;
 	}
 	
 	public function getSetting()

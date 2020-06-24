@@ -105,6 +105,6 @@ class ModuleProvider extends ServiceProvider
         $this->app->register(\Acl\Providers\ModuleProvider::class);
         $this->app->register(\Users\Providers\ModuleProvider::class);
         $this->app->register(\Members\Providers\ModuleProvider::class);
-
+        $this->app->register(\History\Providers\ModuleProvider::class);
     }
 }

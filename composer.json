@@ -46,6 +46,7 @@
             "Acl\\": "module/acl/src",
             "Users\\": "module/users/src",
             "Members\\": "module/members/src",
+            "History\\": "module/history/src",
             "Hook\\": "module/hook/src",
             "Setting\\": "module/setting/src"
         }

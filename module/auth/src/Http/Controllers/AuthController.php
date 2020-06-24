@@ -9,6 +9,7 @@
 namespace Auth\Http\Controllers;
 
 use Cache;
+use History\Repositories\HistoryRepositories;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Auth\Http\Requests\ValidateSecretRequest;
@@ -19,18 +20,18 @@ use Auth\Supports\Traits\Auth;
 class AuthController extends BaseController
 {
 	use Auth;
-	
+	protected $his;
 	/**
 	 * AuthController constructor.
 	 */
-	public function __construct()
+	public function __construct(HistoryRepositories $historyRepositories)
 	{
 		$this->middleware('guest', ['except' => ['getLogout']]);
 		
 		$this->redirectTo = route('nqadmin::dashboard.index.get');
 		$this->redirectPath = route('nqadmin::dashboard.index.get');
 		$this->redirectToLoginPage = route('nqadmin::auth.login.get');
-		//dd(bcrypt('123456'));
+		$this->his = $historyRepositories;
 	}
 
 	public function redirectPath()
