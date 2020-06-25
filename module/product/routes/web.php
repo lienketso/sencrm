@@ -11,7 +11,6 @@ use Illuminate\Routing\Router;
 $adminRoute = config('base.admin_route');
 $moduleRoute = 'product';
 
-
 //Backend
 Route::group(['prefix' => $adminRoute], function (Router $router) use ($adminRoute, $moduleRoute) {
     $router->group(['prefix' => $moduleRoute], function (Router $router) {

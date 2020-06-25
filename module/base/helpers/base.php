@@ -56,25 +56,10 @@ if (!function_exists('convert_status')) {
     }
 }
 
-if (!function_exists('gallery_status')) {
-    function gallery_status($status)
+if (!function_exists('showdate_vn')) {
+    function showdate_vn($date)
     {
-        switch ($status) {
-            case 'active' :
-                return '<span class="status success">Hiển thị</span>';
-                break;
-            case 'disable' :
-                return '<span class="status danger">Tạm ẩn</span>';
-                break;
-            case 'top' :
-                return '<span class="status info">Hiển thị top</span>';
-                break;
-            case 'bottom' :
-                return '<span class="status warning">Hiển thị bottom</span>';
-            default:
-                return '<span class="status danger">Tạm ẩn</span>';
-                break;
-        }
+        return date_format(new DateTime($date),'d/m/Y');
     }
 }
 

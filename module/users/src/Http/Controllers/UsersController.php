@@ -8,13 +8,16 @@
 namespace Users\Http\Controllers;
 
 use Acl\Repositories\RoleRepository;
+use Auth\Supports\Traits\Auth;
 use Barryvdh\Debugbar\Controllers\BaseController;
 use Base\Supports\FlashMessage;
 use History\Repositories\HistoryRepositories;
+//use Illuminate\Http\Request;
 use Users\Http\Requests\UserCreateRequest;
 use Users\Http\Requests\UserEditRequest;
 use Users\Repositories\UsersReferralRepositories;
 use Users\Repositories\UsersRepository;
+use Request;
 
 class UsersController extends BaseController
 {
@@ -40,7 +43,6 @@ class UsersController extends BaseController
 	public function getIndex()
 	{
 		$users = $this->users->orderBy('created_at', 'desc')->paginate(20);
-
 		return view('nqadmin-users::components.index', [
 			'data' => $users
 		]);
@@ -81,7 +83,17 @@ class UsersController extends BaseController
             $user->referral()->sync($data['parent']);
             //Đồng bộ quyền cho user
 			$user->roles()->sync($data['role']);
-
+            //thêm log add user
+            $user_signed = auth('nqadmin')->user();
+            $uri = Request::path();
+            $data_log = [
+                'user_id'=>$user_signed->id,
+                'request_name'=>'Add New User',
+                'request_uri'=>$uri,
+                'request_data'=> json_encode($data)
+            ];
+            $this->his->createHistory($data_log);
+            //Nếu tiếp tục thêm mới
 			if ($request->has('continue_edit')) {
 				return redirect()->route('nqadmin::users.edit.get', [
 					'id' => $user->id
