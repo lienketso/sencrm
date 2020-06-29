@@ -169,6 +169,14 @@
 									</select>
 								</div>
 								<div class="form-group">
+									<label>Ảnh đại diện</label>
+									<div class="flex-upload">
+										<input type="text" name="thumbnail" class="form-control" id="ckfinder-input-1">
+										<button type="button" id="ckfinder-popup-1">Upload</button>
+									</div>
+									<img src="" alt="" id="imgreview">
+								</div>
+								<div class="form-group">
 									<button type="submit" class="btn btn-primary" style="margin-top: 20px">Lưu lại</button>
 
 									@if ($permissions->contains('name','user_edit'))
@@ -183,13 +191,8 @@
 								</div>
 							</div>
 						</div>
-						
-						<div class="form-group">
-							<label>Ảnh đại diện</label>
-							<input type="text" name="thumbnail" id="ckfinder-input-1">
-							<button type="button" id="ckfinder-popup-1">Upload</button>
-							<img src="" alt="" id="imgreview">
-						</div>
+
+
 					</div>
 				</div>
 			</form>

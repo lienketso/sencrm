@@ -17,19 +17,14 @@ class CreateProductTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
-            $table->string('code_name')->nullable();
-            $table->integer('category')->unsigned()->nullable();
-            $table->foreign('category')->references('id')->on('category')->onDelete('SET NULL');
-            $table->double('price')->default(0);
+            $table->string('code_name')->nullable(); //mã sản phẩm
+            $table->string('weight')->nullable(); //Trọng lượng
+            $table->string('unit')->nullable(); //Đơn vị tính
+            $table->double('price')->default(0); //Giá niêm yết
             $table->double('discount')->default(0);
             $table->text('excerpt')->nullable();
-            $table->longText('content')->nullable();
             $table->string('thumbnail')->nullable();
-            $table->enum('status',['active','disable','hot','new','sale'])->default('active');
-            $table->enum('lang_code',['vi','en'])->default('vi');
-            $table->string('meta_title')->nullable();
-            $table->string('meta_description')->nullable();
-            $table->integer('views')->default(0);
+            $table->enum('status',['active','disable'])->default('active');
             $table->timestamps();
         });
     }

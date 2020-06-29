@@ -189,12 +189,20 @@
 								<input type="hidden" value="{{$data->roles()->first()->id}}" name="role">
 							@endif
 							<div class="form-group">
+								<label>Ảnh đại diện</label>
+								<div class="flex-upload">
+								<input type="text" name="thumbnail" class="form-control" id="ckfinder-input-1">
+								<button type="button" id="ckfinder-popup-1">Upload</button>
+								</div>
+								<img src="{{$data->thumbnail}}" alt="" id="imgreview">
+							</div>
+							<div class="form-group">
 								<button type="submit" class="btn btn-primary" style="margin-top: 20px">Lưu lại</button>
 							</div>
 						</div>
 					</div>
 					
-					@include('nqadmin-dashboard::components.thumbnail')
+
 				</div>
 			</div>
 		</form>

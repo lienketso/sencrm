@@ -8,8 +8,8 @@
                     <h3><i class="fa fa-sitemap "></i> Lịch sử</h3>
                     <p>Danh sách lịch sử hoạt động</p>
                 </div>
-            </div>
 
+            </div>
             <div class="row">
                 <div class="col-sm-16">
                     <div class="card">

@@ -58,7 +58,7 @@
                                 <tr>
                                     <th width="10">No.</th>
                                     <th>Tên</th>
-                                    <th>Danh mục</th>
+                                    <th>Trọng lượng</th>
                                     <th>Giá</th>
                                     <th width="120">Hình ảnh</th>
                                     <th>Trạng thái</th>
@@ -71,7 +71,7 @@
                                     <tr class="{{ $loop->index % 2 == 0 ? 'odd' : 'even' }}">
                                         <td>{{$loop->index + 1}}</td>
                                         <td>{{$d->name}}</td>
-                                        <td><strong>{{$d->getCategoryInfo->name}}</strong></td>
+                                        <td><strong>{{$d->weight}}</strong></td>
                                         <td><span style="color: #cc0000">{{number_format($d->price)}}</span></td>
                                         <td>
                                             @if (!empty($d->thumbnail))

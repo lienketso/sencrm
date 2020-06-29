@@ -164,7 +164,13 @@ a {
   color: black;
   border: 1px solid #e6e6e6;
 }
-
+.flex-upload{
+  display: flex;
+}
+#imgreview{
+  max-width: 100%;
+  padding-top: 10px;
+}
 .page_subtitles {
   font-size: 16px;
   line-height: 40px;

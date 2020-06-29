@@ -3,13 +3,11 @@
 @section('js')
     <script type="text/javascript" src="{{asset('adminux/vendor/select2/dist/js/select2.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('adminux/vendor/select2/dist/js/i18n/vi.js')}}"></script>
-    <script type="text/javascript" src="{{asset('adminux/vendor/ckeditor4.8/ckeditor.js')}}"></script>
     <script type="text/javascript" src="{{asset('adminux/js/jquery.mask.js')}}"></script>
 @endsection
 
 @section('js-init')
     <script type="text/javascript" src="{{asset('adminux/vendor/select2/dist/js/init.js')}}"></script>
-    <script type="text/javascript" src="{{asset('adminux/vendor/ckeditor4.8/init.js')}}"></script>
     <script>
         $(document).ready(function () {
             $('#price').mask('000,000,000', {reverse:true});
@@ -51,7 +49,6 @@
                 @endif
 
                 {{csrf_field()}}
-                <input type="hidden" name="lang_code" value="{{$lang}}">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
@@ -65,15 +62,7 @@
                                 </h5>
                             </div>
                             <div class="card-body">
-                                <div class="form-group">
-                                    <label class="form-control-label">Danh mục</label>
-                                    <select name="category" class="form-control">
-                                        <option value="0">---Chọn danh mục---</option>
-                                        @php
-                                            MultiMenu($category);
-                                        @endphp
-                                    </select>
-                                </div>
+
                                 <div class="form-group">
                                     <label class="form-control-label">Tên sản phẩm</label>
                                     <input type="text" parsley-trigger="change"
@@ -105,7 +94,7 @@
                                     >
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-control-label">Giá bán @if($lang=='vi') ( VNĐ ) @endif @if($lang=='en') ( USD ) @endif </label>
+                                    <label class="form-control-label">Giá niêm yết ( VNĐ )  </label>
                                     <input type="text"
                                            class="form-control"
                                            autocomplete="off"
@@ -115,7 +104,7 @@
                                     >
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-control-label">Giá gốc @if($lang=='vi') ( VNĐ ) @endif @if($lang=='en') ( USD ) @endif</label>
+                                    <label class="form-control-label">Giá khuyến mại ( VNĐ )</label>
                                     <input type="text"
                                            class="form-control"
                                            autocomplete="off"
@@ -129,40 +118,12 @@
                                     <textarea class="form-control" id="ckeditors" name="excerpt" rows="4">{{old('excerpt')}}</textarea>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="form-control-label">Chi tiết sản phẩm</label>
-                                    <textarea id="ckeditor"
-                                              class="form-control"
-                                              name="content"
-                                              required
-                                              parsley-trigger="change"
-                                    >{{old('content')}}</textarea>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="form-control-label">Thẻ meta title</label>
-                                    <input type="text"
-                                           class="form-control"
-                                           autocomplete="off"
-                                           name="meta_title"
-                                           id="input-seo-title"
-                                           placeholder=""
-                                           value="{{old('meta_title')}}"
-                                    >
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="form-control-label">Thẻ meta description</label>
-                                    <textarea class="form-control" name="meta_description" rows="4">{{old('meta_description')}}</textarea>
-                                </div>
-
                             </div>
                         </div>
                     </div>
 
                     <div class="col-sm-4">
-                        @include('nqadmin-dashboard::components.thumbnail')
-                        @include('nqadmin-dashboard::components.gallery')
+
                         <div class="card">
                             <div class="card-header">
                                 <h5 class="card-title">Tùy chọn</h5>
@@ -170,25 +131,37 @@
 
                             <div class="card-body">
                                 <div class="form-group">
+                                    <label class="form-control-label">Trọng lượng</label>
+                                    <input type="text"
+                                           class="form-control"
+                                           autocomplete="off"
+                                           name="weight"
+                                           value="{{old('weight')}}"
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Đơn vị tính</label>
+                                    <input type="text"
+                                           class="form-control"
+                                           autocomplete="off"
+                                           name="unit"
+                                           value="{{old('unit')}}"
+                                    >
+                                </div>
+                                <div class="form-group">
                                     <label class="form-control-label">Trạng thái </label>
-                                    <select class="custom-select form-control" name="status">
+                                    <select class="form-control" name="status">
                                         <option value="active" {{ (old('status') == 'active') ? 'selected' : '' }}>Hiển thị</option>
                                         <option value="disable" {{ (old('status') == 'disable') ? 'selected' : '' }}>Tạm ẩn</option>
-                                        <option value="hot" {{ (old('status') == 'hot') ? 'selected' : '' }}>Nổi bật</option>
-                                        <option value="new" {{ (old('status') == 'new') ? 'selected' : '' }}>Mới nhất</option>
-                                        <option value="sale" {{ (old('status') == 'sale') ? 'selected' : '' }}>Hot Sale</option>
                                     </select>
                                 </div>
-
                                 <div class="form-group">
-                                    <label class="form-control-label">Hiển thị </label>
-                                    <select class="custom-select form-control" name="label">
-                                        <option value="">Sản phẩm ưa thích</option>
-                                        <option value="no" {{ (old('label') == 'no') ? 'selected' : '' }}>Không</option>
-                                        <option value="yes" {{ (old('label') == 'yes') ? 'selected' : ''
-                                        }}>Có</option>
-
-                                    </select>
+                                    <label>Ảnh sản phẩm</label>
+                                    <div class="flex-upload">
+                                        <input type="text" name="thumbnail" class="form-control" id="ckfinder-input-1">
+                                        <button type="button" id="ckfinder-popup-1">Upload</button>
+                                    </div>
+                                    <img src="" alt="" id="imgreview">
                                 </div>
 
                                 <div class="form-group">

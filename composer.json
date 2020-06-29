@@ -48,6 +48,7 @@
             "Members\\": "module/members/src",
             "History\\": "module/history/src",
             "Hook\\": "module/hook/src",
+            "Product\\": "module/product/src",
             "Setting\\": "module/setting/src"
         }
     },
