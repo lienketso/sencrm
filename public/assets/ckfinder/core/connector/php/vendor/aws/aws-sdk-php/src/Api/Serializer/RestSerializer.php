@@ -60,7 +60,7 @@ abstract class RestSerializer
      *
      * @param StructureShape   $member  Member to serialize
      * @param array            $value   Value to serialize
-     * @param array            $opts    Request options to modify.
+     * @param array            $opts    Requests options to modify.
      */
     abstract protected function payload(
         StructureShape $member,

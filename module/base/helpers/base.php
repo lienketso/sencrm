@@ -39,6 +39,12 @@ function file_url(){
     return public_path().'/uploads/';
 }
 
+function pre($data){
+    echo '<pre>';
+    print_r($data);
+    echo '</pre>';
+}
+
 if (!function_exists('convert_status')) {
     function conver_status($status)
     {

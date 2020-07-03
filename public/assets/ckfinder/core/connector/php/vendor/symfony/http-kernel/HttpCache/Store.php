@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Store implements all the logic for storing cache metadata (Request and Response headers).
+ * Store implements all the logic for storing cache metadata (Requests and Response headers).
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
@@ -56,7 +56,7 @@ class Store implements StoreInterface
     }
 
     /**
-     * Tries to lock the cache for a given Request, without blocking.
+     * Tries to lock the cache for a given Requests, without blocking.
      *
      * @return bool|string true if the lock is acquired, the path to the current lock otherwise
      */
@@ -83,7 +83,7 @@ class Store implements StoreInterface
     }
 
     /**
-     * Releases the lock for the given Request.
+     * Releases the lock for the given Requests.
      *
      * @return bool False if the lock file does not exist or cannot be unlocked, true otherwise
      */
@@ -123,7 +123,7 @@ class Store implements StoreInterface
     }
 
     /**
-     * Locates a cached Response for the Request provided.
+     * Locates a cached Response for the Requests provided.
      *
      * @return Response|null A Response instance, or null if no cache entry was found
      */
@@ -161,7 +161,7 @@ class Store implements StoreInterface
     }
 
     /**
-     * Writes a cache entry to the store for the given Request and Response.
+     * Writes a cache entry to the store for the given Requests and Response.
      *
      * Existing entries are read and any that match the response are removed. This
      * method calls write with the new list of cache entries.
@@ -253,12 +253,12 @@ class Store implements StoreInterface
     }
 
     /**
-     * Determines whether two Request HTTP header sets are non-varying based on
+     * Determines whether two Requests HTTP header sets are non-varying based on
      * the vary response header value provided.
      *
      * @param string|null $vary A Response vary header
-     * @param array       $env1 A Request HTTP header array
-     * @param array       $env2 A Request HTTP header array
+     * @param array       $env1 A Requests HTTP header array
+     * @param array       $env2 A Requests HTTP header array
      */
     private function requestsMatch(?string $vary, array $env1, array $env2): bool
     {
@@ -396,7 +396,7 @@ class Store implements StoreInterface
     }
 
     /**
-     * Generates a cache key for the given Request.
+     * Generates a cache key for the given Requests.
      *
      * This method should return a key that must only depend on a
      * normalized version of the request URI.
@@ -405,7 +405,7 @@ class Store implements StoreInterface
      * headers, use a Vary header to indicate them, and each representation will
      * be stored independently under the same cache key.
      *
-     * @return string A key for the given Request
+     * @return string A key for the given Requests
      */
     protected function generateCacheKey(Request $request)
     {
@@ -413,7 +413,7 @@ class Store implements StoreInterface
     }
 
     /**
-     * Returns a cache key for the given Request.
+     * Returns a cache key for the given Requests.
      */
     private function getCacheKey(Request $request): string
     {
@@ -425,7 +425,7 @@ class Store implements StoreInterface
     }
 
     /**
-     * Persists the Request HTTP headers.
+     * Persists the Requests HTTP headers.
      */
     private function persistRequest(Request $request): array
     {

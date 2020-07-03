@@ -494,7 +494,7 @@ class ValidateTest extends \PHPUnit_Framework_TestCase
 //         $method = 'getState';
 
 //         // Test
-//         $result = Validate::methodExists($asset, $method, 'MicrosoftAzure\Storage\MediaServices\Models\Asset');
+//         $result = Validate::methodExists($asset, $method, 'MicrosoftAzure\Storage\MediaServices\Model\Asset');
 
 //         // Assert
 //         $this->assertTrue($result);
@@ -511,7 +511,7 @@ class ValidateTest extends \PHPUnit_Framework_TestCase
 //         $method = 'setCreated';
 
 //         // Test
-//         $result = Validate::methodExists($asset, $method, 'MicrosoftAzure\Storage\MediaServices\Models\Asset');
+//         $result = Validate::methodExists($asset, $method, 'MicrosoftAzure\Storage\MediaServices\Model\Asset');
 
 //         // Assert
 //     }

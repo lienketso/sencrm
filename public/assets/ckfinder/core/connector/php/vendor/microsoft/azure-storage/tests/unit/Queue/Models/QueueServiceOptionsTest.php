@@ -15,7 +15,7 @@
  * PHP version 5
  *
  * @category  Microsoft
- * @package   MicrosoftAzure\Storage\Tests\Unit\Queue\Models
+ * @package   MicrosoftAzure\Storage\Tests\Unit\Queue\Model
  * @author    Azure Storage PHP SDK <dmsh@microsoft.com>
  * @copyright 2016 Microsoft Corporation
  * @license   https://github.com/azure/azure-storage-php/LICENSE
@@ -29,7 +29,7 @@ use MicrosoftAzure\Storage\Queue\Models\QueueServiceOptions;
  * Unit tests for class QueueServiceOptions
  *
  * @category  Microsoft
- * @package   MicrosoftAzure\Storage\Tests\Unit\Queue\Models
+ * @package   MicrosoftAzure\Storage\Tests\Unit\Queue\Model
  * @author    Azure Storage PHP SDK <dmsh@microsoft.com>
  * @copyright 2016 Microsoft Corporation
  * @license   https://github.com/azure/azure-storage-php/LICENSE

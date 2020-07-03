@@ -14,7 +14,7 @@ namespace Symfony\Component\HttpFoundation;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 
 /**
- * ExpressionRequestMatcher uses an expression to match a Request.
+ * ExpressionRequestMatcher uses an expression to match a Requests.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */

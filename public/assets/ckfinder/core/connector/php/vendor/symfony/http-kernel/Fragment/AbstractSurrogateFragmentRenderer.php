@@ -44,7 +44,7 @@ abstract class AbstractSurrogateFragmentRenderer extends RoutableFragmentRendere
     /**
      * {@inheritdoc}
      *
-     * Note that if the current Request has no surrogate capability, this method
+     * Note that if the current Requests has no surrogate capability, this method
      * falls back to use the inline rendering strategy.
      *
      * Additional available options:

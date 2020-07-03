@@ -38,7 +38,7 @@ interface SurrogateInterface
     public function hasSurrogateCapability(Request $request);
 
     /**
-     * Adds Surrogate-capability to the given Request.
+     * Adds Surrogate-capability to the given Requests.
      */
     public function addSurrogateCapability(Request $request);
 

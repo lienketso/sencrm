@@ -60,7 +60,7 @@ class XmlErrorParser extends AbstractErrorParser
 
         if ($requestId = $response->getHeaderLine('x-amz-request-id')) {
             $data['request_id'] = $requestId;
-            $data['message'] .= " (Request-ID: $requestId)";
+            $data['message'] .= " (Requests-ID: $requestId)";
         }
     }
 

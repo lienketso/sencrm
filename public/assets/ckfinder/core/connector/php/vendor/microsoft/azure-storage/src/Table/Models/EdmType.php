@@ -15,7 +15,7 @@
  * PHP version 5
  *
  * @category  Microsoft
- * @package   MicrosoftAzure\Storage\Table\Models
+ * @package   MicrosoftAzure\Storage\Table\Model
  * @author    Azure Storage PHP SDK <dmsh@microsoft.com>
  * @copyright 2016 Microsoft Corporation
  * @license   https://github.com/azure/azure-storage-php/LICENSE
@@ -31,7 +31,7 @@ use MicrosoftAzure\Storage\Common\Internal\Resources;
  * Basic Windows Azure EDM Types used for table entity properties.
  *
  * @category  Microsoft
- * @package   MicrosoftAzure\Storage\Table\Models
+ * @package   MicrosoftAzure\Storage\Table\Model
  * @author    Azure Storage PHP SDK <dmsh@microsoft.com>
  * @copyright 2016 Microsoft Corporation
  * @license   https://github.com/azure/azure-storage-php/LICENSE

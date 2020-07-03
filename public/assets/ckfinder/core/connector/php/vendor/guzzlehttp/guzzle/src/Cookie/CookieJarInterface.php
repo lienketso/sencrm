@@ -22,7 +22,7 @@ interface CookieJarInterface extends \Countable, \IteratorAggregate
      * If no matching cookies are found in the cookie jar, then no Cookie
      * header is added to the request and the same request is returned.
      *
-     * @param RequestInterface $request Request object to modify.
+     * @param RequestInterface $request Requests object to modify.
      *
      * @return RequestInterface returns the modified request.
      */
@@ -31,7 +31,7 @@ interface CookieJarInterface extends \Countable, \IteratorAggregate
     /**
      * Extract cookies from an HTTP response and store them in the CookieJar.
      *
-     * @param RequestInterface  $request  Request that was sent
+     * @param RequestInterface  $request  Requests that was sent
      * @param ResponseInterface $response Response that was received
      */
     public function extractCookies(

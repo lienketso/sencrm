@@ -25,10 +25,10 @@ final class EasyHandle
     /** @var ResponseInterface Received response (if any) */
     public $response;
 
-    /** @var RequestInterface Request being sent */
+    /** @var RequestInterface Requests being sent */
     public $request;
 
-    /** @var array Request options */
+    /** @var array Requests options */
     public $options = [];
 
     /** @var int cURL error number (if any) */

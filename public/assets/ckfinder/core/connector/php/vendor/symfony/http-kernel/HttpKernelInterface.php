@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * HttpKernelInterface handles a Request to convert it to a Response.
+ * HttpKernelInterface handles a Requests to convert it to a Response.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
@@ -25,7 +25,7 @@ interface HttpKernelInterface
     const SUB_REQUEST = 2;
 
     /**
-     * Handles a Request to convert it to a Response.
+     * Handles a Requests to convert it to a Response.
      *
      * When $catch is true, the implementation must catch all exceptions
      * and do its best to convert them to a Response instance.

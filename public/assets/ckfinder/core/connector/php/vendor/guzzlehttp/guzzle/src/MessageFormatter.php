@@ -20,16 +20,16 @@ use Psr\Http\Message\ResponseInterface;
  * - {method}:         Method of the request
  * - {uri}:            URI of the request
  * - {version}:        Protocol version
- * - {target}:         Request target of the request (path + query + fragment)
+ * - {target}:         Requests target of the request (path + query + fragment)
  * - {hostname}:       Hostname of the machine that sent the request
  * - {code}:           Status code of the response (if available)
  * - {phrase}:         Reason phrase of the response  (if available)
  * - {error}:          Any error messages (if available)
  * - {req_header_*}:   Replace `*` with the lowercased name of a request header to add to the message
  * - {res_header_*}:   Replace `*` with the lowercased name of a response header to add to the message
- * - {req_headers}:    Request headers
+ * - {req_headers}:    Requests headers
  * - {res_headers}:    Response headers
- * - {req_body}:       Request body
+ * - {req_body}:       Requests body
  * - {res_body}:       Response body
  */
 class MessageFormatter
@@ -57,7 +57,7 @@ class MessageFormatter
     /**
      * Returns a formatted message string.
      *
-     * @param RequestInterface  $request  Request that was sent
+     * @param RequestInterface  $request  Requests that was sent
      * @param ResponseInterface $response Response that was received
      * @param \Exception        $error    Exception that was received
      *

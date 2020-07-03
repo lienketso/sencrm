@@ -15,7 +15,7 @@
  * PHP version 5
  *
  * @category  Microsoft
- * @package   MicrosoftAzure\Storage\Table\Models\Filters
+ * @package   MicrosoftAzure\Storage\Table\Model\Filters
  * @author    Azure Storage PHP SDK <dmsh@microsoft.com>
  * @copyright 2016 Microsoft Corporation
  * @license   https://github.com/azure/azure-storage-php/LICENSE
@@ -29,7 +29,7 @@ use MicrosoftAzure\Storage\Table\Models\EdmType;
  * Constant filter
  *
  * @category  Microsoft
- * @package   MicrosoftAzure\Storage\Table\Models\Filters
+ * @package   MicrosoftAzure\Storage\Table\Model\Filters
  * @author    Azure Storage PHP SDK <dmsh@microsoft.com>
  * @copyright 2016 Microsoft Corporation
  * @license   https://github.com/azure/azure-storage-php/LICENSE

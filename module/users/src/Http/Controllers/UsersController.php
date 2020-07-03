@@ -12,7 +12,7 @@ use Auth\Supports\Traits\Auth;
 use Barryvdh\Debugbar\Controllers\BaseController;
 use Base\Supports\FlashMessage;
 use History\Repositories\HistoryRepositories;
-//use Illuminate\Http\Request;
+//use Illuminate\Http\Requests;
 use Users\Http\Requests\UserCreateRequest;
 use Users\Http\Requests\UserEditRequest;
 use Users\Repositories\UsersReferralRepositories;
@@ -106,7 +106,7 @@ class UsersController extends BaseController
 			return redirect()->back()->withErrors(config('messages.error'));
 		}
 	}
-	
+
 	/**
 	 * @param $id
 	 *

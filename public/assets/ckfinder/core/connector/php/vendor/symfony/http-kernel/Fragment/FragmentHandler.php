@@ -78,7 +78,7 @@ class FragmentHandler
         }
 
         if (!$request = $this->requestStack->getCurrentRequest()) {
-            throw new \LogicException('Rendering a fragment can only be done when handling a Request.');
+            throw new \LogicException('Rendering a fragment can only be done when handling a Requests.');
         }
 
         return $this->deliver($this->renderers[$renderer]->render($uri, $request, $options));

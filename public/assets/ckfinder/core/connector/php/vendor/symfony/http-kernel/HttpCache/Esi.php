@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Esi implements the ESI capabilities to Request and Response instances.
+ * Esi implements the ESI capabilities to Requests and Response instances.
  *
  * For more information, read the following W3C notes:
  *

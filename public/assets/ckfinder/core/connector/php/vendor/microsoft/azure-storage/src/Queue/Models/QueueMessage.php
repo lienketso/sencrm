@@ -15,7 +15,7 @@
  * PHP version 5
  *
  * @category  Microsoft
- * @package   MicrosoftAzure\Storage\Queue\Models
+ * @package   MicrosoftAzure\Storage\Queue\Model
  * @author    Azure Storage PHP SDK <dmsh@microsoft.com>
  * @copyright 2016 Microsoft Corporation
  * @license   https://github.com/azure/azure-storage-php/LICENSE
@@ -30,7 +30,7 @@ use MicrosoftAzure\Storage\Common\Internal\Serialization\XmlSerializer;
  * Wrappers queue message text.
  *
  * @category  Microsoft
- * @package   MicrosoftAzure\Storage\Queue\Models
+ * @package   MicrosoftAzure\Storage\Queue\Model
  * @author    Azure Storage PHP SDK <dmsh@microsoft.com>
  * @copyright 2016 Microsoft Corporation
  * @license   https://github.com/azure/azure-storage-php/LICENSE

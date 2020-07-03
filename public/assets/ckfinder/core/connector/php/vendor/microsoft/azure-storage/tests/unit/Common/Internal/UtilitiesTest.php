@@ -543,7 +543,7 @@ class UtilitiesTest extends \PHPUnit_Framework_TestCase
 //         $id = 'kjgdfg57';
 
 //         // Test
-//         $result = Utilities::GetEntityId($id, 'MicrosoftAzure\Storage\MediaServices\Models\Asset');
+//         $result = Utilities::GetEntityId($id, 'MicrosoftAzure\Storage\MediaServices\Model\Asset');
 
 //         //Assert
 //         $this->assertEquals($id, $result);
@@ -564,7 +564,7 @@ class UtilitiesTest extends \PHPUnit_Framework_TestCase
 //         $value = Asset::createFromOptions($assetArray);
 
 //         // Test
-//         $result = Utilities::GetEntityId($value,'MicrosoftAzure\Storage\MediaServices\Models\Asset');
+//         $result = Utilities::GetEntityId($value,'MicrosoftAzure\Storage\MediaServices\Model\Asset');
 
 //         //Assert
 //         $this->assertEquals($assetArray[$idKey], $result);

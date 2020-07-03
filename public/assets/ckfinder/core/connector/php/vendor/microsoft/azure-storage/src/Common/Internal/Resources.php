@@ -273,7 +273,7 @@ class Resources
     const QPV_REIMAGE = 'reimage';
     const QPV_ROLLBACK = 'rollback';
 
-    // Request body content types
+    // Requests body content types
     const URL_ENCODED_CONTENT_TYPE = 'application/x-www-form-urlencoded';
     const XML_CONTENT_TYPE         = 'application/xml';
     const JSON_CONTENT_TYPE        = 'application/json';

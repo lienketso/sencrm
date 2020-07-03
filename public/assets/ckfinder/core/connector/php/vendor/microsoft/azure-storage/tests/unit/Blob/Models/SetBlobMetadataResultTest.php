@@ -15,7 +15,7 @@
  * PHP version 5
  *
  * @category  Microsoft
- * @package   MicrosoftAzure\Storage\Tests\Unit\Blob\Models
+ * @package   MicrosoftAzure\Storage\Tests\Unit\Blob\Model
  * @author    Azure Storage PHP SDK <dmsh@microsoft.com>
  * @copyright 2016 Microsoft Corporation
  * @license   https://github.com/azure/azure-storage-php/LICENSE
@@ -29,7 +29,7 @@ use MicrosoftAzure\Storage\Blob\Models\SetBlobMetadataResult;
  * Unit tests for class SetBlobMetadataResult
  *
  * @category  Microsoft
- * @package   MicrosoftAzure\Storage\Tests\Unit\Blob\Models
+ * @package   MicrosoftAzure\Storage\Tests\Unit\Blob\Model
  * @author    Azure Storage PHP SDK <dmsh@microsoft.com>
  * @copyright 2016 Microsoft Corporation
  * @license   https://github.com/azure/azure-storage-php/LICENSE

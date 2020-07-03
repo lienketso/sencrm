@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Ssi implements the SSI capabilities to Request and Response instances.
+ * Ssi implements the SSI capabilities to Requests and Response instances.
  *
  * @author Sebastian Krebs <krebs.seb@gmail.com>
  */

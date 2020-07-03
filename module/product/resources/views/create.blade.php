@@ -123,12 +123,10 @@
                     </div>
 
                     <div class="col-sm-4">
-
                         <div class="card">
                             <div class="card-header">
                                 <h5 class="card-title">Tùy chọn</h5>
                             </div>
-
                             <div class="card-body">
                                 <div class="form-group">
                                     <label class="form-control-label">Trọng lượng</label>

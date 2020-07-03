@@ -180,7 +180,7 @@ class SignatureV4 implements SignatureInterface
      *
      * Useful for pre-signing query protocol requests.
      *
-     * @param RequestInterface $request Request to clone
+     * @param RequestInterface $request Requests to clone
      *
      * @return RequestInterface
      * @throws \InvalidArgumentException if the method is not POST

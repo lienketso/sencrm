@@ -16,7 +16,7 @@ use Symfony\Component\HttpKernel\Event\ResponseEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 
 /**
- * ResponseListener fixes the Response headers based on the Request.
+ * ResponseListener fixes the Response headers based on the Requests.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  *

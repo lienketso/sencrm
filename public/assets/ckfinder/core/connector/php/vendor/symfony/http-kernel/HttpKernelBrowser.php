@@ -25,7 +25,7 @@ use Symfony\Component\HttpFoundation\Response;
  *
  * @author Fabien Potencier <fabien@symfony.com>
  *
- * @method Request  getRequest()  A Request instance
+ * @method Request  getRequest()  A Requests instance
  * @method Response getResponse() A Response instance
  */
 class HttpKernelBrowser extends AbstractBrowser
@@ -126,7 +126,7 @@ EOF;
     /**
      * Converts the BrowserKit request to a HttpKernel request.
      *
-     * @return Request A Request instance
+     * @return Request A Requests instance
      */
     protected function filterRequest(DomRequest $request)
     {

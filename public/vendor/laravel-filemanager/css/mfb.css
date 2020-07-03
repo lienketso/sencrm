@@ -38,7 +38,7 @@
 /**
  * The code AND the comments use naming conventions to refer to each part of
  * the UI put in place by this component. If you see that somewhere they are
- * not followed please consider a Pull Request. The naming conventions are:
+ * not followed please consider a Pull Requests. The naming conventions are:
  *
  * "Component" : the widget itself as a whole. This is the last time it will be
  *               called anything different than "component". So, stay away from

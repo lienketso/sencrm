@@ -49,10 +49,6 @@ class ProductController extends BaseController
     }
     public function postEdit($id, ProductValidate $request){
         $input = $request->except(['_token']);
-        if($request->gallery){
-            $gallery = \GuzzleHttp\json_encode($request->gallery);
-            $input['gallery'] = $gallery;
-        }
 
         $listen = $this->lt->update($input,$id);
         return redirect()->route('nqadmin::product.index.get')->with(FlashMessage::returnMessage('create'));
@@ -60,6 +56,5 @@ class ProductController extends BaseController
     public function getDelete($id){
         return getDelete($id,$this->lt);
     }
-
 
 }

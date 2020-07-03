@@ -15,7 +15,7 @@
  * PHP version 5
  *
  * @category  Microsoft
- * @package   MicrosoftAzure\Storage\Blob\Models
+ * @package   MicrosoftAzure\Storage\Blob\Model
  * @author    Azure Storage PHP SDK <dmsh@microsoft.com>
  * @copyright 2016 Microsoft Corporation
  * @license   https://github.com/azure/azure-storage-php/LICENSE
@@ -30,7 +30,7 @@ use \MicrosoftAzure\Storage\Common\Internal\Validate;
  * Options for listBlobs API.
  *
  * @category  Microsoft
- * @package   MicrosoftAzure\Storage\Blob\Models
+ * @package   MicrosoftAzure\Storage\Blob\Model
  * @author    Azure Storage PHP SDK <dmsh@microsoft.com>
  * @copyright 2016 Microsoft Corporation
  * @license   https://github.com/azure/azure-storage-php/LICENSE
@@ -62,7 +62,7 @@ class ListContainersOptions extends BlobServiceOptions
      * Specifies the maximum number of containers to return. If the request does not
      * specify maxresults, or specifies a value greater than 5,000, the server will
      * return up to 5,000 items. If the parameter is set to a value less than or
-     * equal to zero, the server will return status code 400 (Bad Request).
+     * equal to zero, the server will return status code 400 (Bad Requests).
      * 
      * @var string
      */

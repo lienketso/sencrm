@@ -90,7 +90,7 @@ class History implements \Countable, \IteratorAggregate
      * Initiate an entry being added to the history.
      *
      * @param CommandInterface $cmd Command be executed.
-     * @param RequestInterface $req Request being sent.
+     * @param RequestInterface $req Requests being sent.
      *
      * @return string Returns the ticket used to finish the entry.
      */

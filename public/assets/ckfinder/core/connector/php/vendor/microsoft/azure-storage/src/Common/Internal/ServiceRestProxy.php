@@ -103,7 +103,7 @@ class ServiceRestProxy extends RestProxy
      * @param array  $postParameters The HTTP POST parameters.
      * @param string $path           URL path
      * @param int    $statusCode     Expected status code received in the response
-     * @param string $body           Request body
+     * @param string $body           Requests body
      * @param array  $clientOptions  Guzzle Client options
      *
      * @return GuzzleHttp\Psr7\Response

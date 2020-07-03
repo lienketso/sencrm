@@ -62,7 +62,7 @@ class WrappedHttpHandler
      * with AWS specific values (e.g., a result object or AWS exception).
      *
      * @param CommandInterface $command Command being executed.
-     * @param RequestInterface $request Request to send.
+     * @param RequestInterface $request Requests to send.
      *
      * @return Promise\PromiseInterface
      */
@@ -149,7 +149,7 @@ class WrappedHttpHandler
      * Parses a rejection into an AWS error.
      *
      * @param array            $err     Rejection error array.
-     * @param RequestInterface $request Request that was sent.
+     * @param RequestInterface $request Requests that was sent.
      * @param CommandInterface $command Command being sent.
      * @param array            $stats   Transfer statistics
      *

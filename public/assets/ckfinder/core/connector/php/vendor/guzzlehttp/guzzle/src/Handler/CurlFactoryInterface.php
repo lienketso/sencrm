@@ -8,7 +8,7 @@ interface CurlFactoryInterface
     /**
      * Creates a cURL handle resource.
      *
-     * @param RequestInterface $request Request
+     * @param RequestInterface $request Requests
      * @param array            $options Transfer options
      *
      * @return EasyHandle

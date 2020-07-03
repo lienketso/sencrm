@@ -50,7 +50,7 @@ class RouterListener implements EventSubscriberInterface
     private $debug;
 
     /**
-     * @param UrlMatcherInterface|RequestMatcherInterface $matcher    The Url or Request matcher
+     * @param UrlMatcherInterface|RequestMatcherInterface $matcher    The Url or Requests matcher
      * @param RequestContext|null                         $context    The RequestContext (can be null when $matcher implements RequestContextAwareInterface)
      * @param string                                      $projectDir
      *

@@ -12,7 +12,7 @@
 namespace Symfony\Component\HttpFoundation;
 
 /**
- * Request stack that controls the lifecycle of requests.
+ * Requests stack that controls the lifecycle of requests.
  *
  * @author Benjamin Eberlei <kontakt@beberlei.de>
  */
@@ -24,7 +24,7 @@ class RequestStack
     private $requests = [];
 
     /**
-     * Pushes a Request on the stack.
+     * Pushes a Requests on the stack.
      *
      * This method should generally not be called directly as the stack
      * management should be taken care of by the application itself.
@@ -62,7 +62,7 @@ class RequestStack
     }
 
     /**
-     * Gets the master Request.
+     * Gets the master Requests.
      *
      * Be warned that making your code aware of the master request
      * might make it un-compatible with other features of your framework
@@ -86,7 +86,7 @@ class RequestStack
      * might make it un-compatible with other features of your framework
      * like ESI support.
      *
-     * If current Request is the master request, it returns null.
+     * If current Requests is the master request, it returns null.
      *
      * @return Request|null
      */

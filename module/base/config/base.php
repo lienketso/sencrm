@@ -8,5 +8,4 @@
  */
 return [
 	'admin_route' => env('SOURCE_ADMIN_ROUTE', 'admincp'),
-    'image_url'=> 'http://'.$_SERVER['HTTP_HOST']
 ];

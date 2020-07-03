@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 /**
- * Abstract class implementing Surrogate capabilities to Request and Response instances.
+ * Abstract class implementing Surrogate capabilities to Requests and Response instances.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  * @author Robin Chalas <robin.chalas@gmail.com>

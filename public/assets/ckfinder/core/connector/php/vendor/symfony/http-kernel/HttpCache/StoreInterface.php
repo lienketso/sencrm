@@ -25,14 +25,14 @@ use Symfony\Component\HttpFoundation\Response;
 interface StoreInterface
 {
     /**
-     * Locates a cached Response for the Request provided.
+     * Locates a cached Response for the Requests provided.
      *
      * @return Response|null A Response instance, or null if no cache entry was found
      */
     public function lookup(Request $request);
 
     /**
-     * Writes a cache entry to the store for the given Request and Response.
+     * Writes a cache entry to the store for the given Requests and Response.
      *
      * Existing entries are read and any that match the response are removed. This
      * method calls write with the new list of cache entries.
@@ -47,14 +47,14 @@ interface StoreInterface
     public function invalidate(Request $request);
 
     /**
-     * Locks the cache for a given Request.
+     * Locks the cache for a given Requests.
      *
      * @return bool|string true if the lock is acquired, the path to the current lock otherwise
      */
     public function lock(Request $request);
 
     /**
-     * Releases the lock for the given Request.
+     * Releases the lock for the given Requests.
      *
      * @return bool False if the lock file does not exist or cannot be unlocked, true otherwise
      */

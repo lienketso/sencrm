@@ -193,7 +193,7 @@ function normalize_header($header)
  * - query: (string) Set the query string value of the URI.
  * - version: (string) Set the protocol version.
  *
- * @param RequestInterface $request Request to clone and modify.
+ * @param RequestInterface $request Requests to clone and modify.
  * @param array            $changes Changes to apply.
  *
  * @return RequestInterface
@@ -460,7 +460,7 @@ function readline(StreamInterface $stream, $maxLength = null)
 /**
  * Parses a request message string into a request object.
  *
- * @param string $message Request message string.
+ * @param string $message Requests message string.
  *
  * @return Request
  */

@@ -7,7 +7,7 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
 
 /**
- * HTTP Request exception
+ * HTTP Requests exception
  */
 class RequestException extends TransferException
 {
@@ -55,7 +55,7 @@ class RequestException extends TransferException
     /**
      * Factory method to create a new exception with a normalized error message
      *
-     * @param RequestInterface  $request  Request
+     * @param RequestInterface  $request  Requests
      * @param ResponseInterface $response Response received
      * @param \Exception        $previous Previous exception
      * @param array             $ctx      Optional handler context.

@@ -77,12 +77,12 @@ class FragmentListener implements EventSubscriberInterface
 
     protected function validateRequest(Request $request)
     {
-        // is the Request safe?
+        // is the Requests safe?
         if (!$request->isMethodSafe()) {
             throw new AccessDeniedHttpException();
         }
 
-        // is the Request signed?
+        // is the Requests signed?
         // we cannot use $request->getUri() here as we want to work with the original URI (no query string reordering)
         if ($this->signer->check($request->getSchemeAndHttpHost().$request->getBaseUrl().$request->getPathInfo().(null !== ($qs = $request->server->get('QUERY_STRING')) ? '?'.$qs : ''))) {
             return;

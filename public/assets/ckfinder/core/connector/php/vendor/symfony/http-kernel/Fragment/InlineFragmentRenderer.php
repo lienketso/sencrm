@@ -21,7 +21,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 
 /**
- * Implements the inline rendering strategy where the Request is rendered by the current HTTP kernel.
+ * Implements the inline rendering strategy where the Requests is rendered by the current HTTP kernel.
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
@@ -50,8 +50,8 @@ class InlineFragmentRenderer extends RoutableFragmentRenderer
             $reference = $uri;
 
             // Remove attributes from the generated URI because if not, the Symfony
-            // routing system will use them to populate the Request attributes. We don't
-            // want that as we want to preserve objects (so we manually set Request attributes
+            // routing system will use them to populate the Requests attributes. We don't
+            // want that as we want to preserve objects (so we manually set Requests attributes
             // below instead)
             $attributes = $reference->attributes;
             $reference->attributes = [];
@@ -70,7 +70,7 @@ class InlineFragmentRenderer extends RoutableFragmentRenderer
 
         $subRequest = $this->createSubRequest($uri, $request);
 
-        // override Request attributes as they can be objects (which are not supported by the generated URI)
+        // override Requests attributes as they can be objects (which are not supported by the generated URI)
         if (null !== $reference) {
             $subRequest->attributes->add($reference->attributes);
         }

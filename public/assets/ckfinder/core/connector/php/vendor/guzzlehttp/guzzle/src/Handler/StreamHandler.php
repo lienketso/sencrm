@@ -22,8 +22,8 @@ class StreamHandler
     /**
      * Sends an HTTP request.
      *
-     * @param RequestInterface $request Request to send.
-     * @param array            $options Request transfer options.
+     * @param RequestInterface $request Requests to send.
+     * @param array            $options Requests transfer options.
      *
      * @return PromiseInterface
      */

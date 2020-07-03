@@ -11,7 +11,7 @@ use Psr\Http\Message\UploadedFileInterface;
 /**
  * Server-side HTTP request
  *
- * Extends the Request definition to add methods for accessing incoming data,
+ * Extends the Requests definition to add methods for accessing incoming data,
  * specifically server parameters, cookies, matched path parameters, query
  * string arguments, body parameters, and upload file information.
  *
@@ -57,8 +57,8 @@ class ServerRequest extends Request implements ServerRequestInterface
     /**
      * @param string                               $method       HTTP method
      * @param string|UriInterface                  $uri          URI
-     * @param array                                $headers      Request headers
-     * @param string|null|resource|StreamInterface $body         Request body
+     * @param array                                $headers      Requests headers
+     * @param string|null|resource|StreamInterface $body         Requests body
      * @param string                               $version      Protocol version
      * @param array                                $serverParams Typically the $_SERVER superglobal
      */

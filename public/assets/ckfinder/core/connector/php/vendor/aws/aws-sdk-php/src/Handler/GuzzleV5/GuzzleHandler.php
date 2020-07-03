@@ -17,7 +17,7 @@ use Psr\Http\Message\StreamInterface as Psr7StreamInterface;
 /**
  * A request handler that sends PSR-7-compatible requests with Guzzle 5.
  *
- * The handler accepts a PSR-7 Request object and an array of transfer options
+ * The handler accepts a PSR-7 Requests object and an array of transfer options
  * and returns a Guzzle 6 Promise. The promise is either resolved with a
  * PSR-7 Response object or rejected with an array of error data.
  *

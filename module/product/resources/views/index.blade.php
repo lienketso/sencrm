@@ -59,7 +59,7 @@
                                     <th width="10">No.</th>
                                     <th>Tên</th>
                                     <th>Trọng lượng</th>
-                                    <th>Giá</th>
+                                    <th>Giá niêm yết</th>
                                     <th width="120">Hình ảnh</th>
                                     <th>Trạng thái</th>
                                     <th width="100">Tùy chọn</th>

@@ -20,8 +20,8 @@ interface ClientInterface
     /**
      * Send an HTTP request.
      *
-     * @param RequestInterface $request Request to send
-     * @param array            $options Request options to apply to the given
+     * @param RequestInterface $request Requests to send
+     * @param array            $options Requests options to apply to the given
      *                                  request and to the transfer.
      *
      * @return ResponseInterface
@@ -32,8 +32,8 @@ interface ClientInterface
     /**
      * Asynchronously send an HTTP request.
      *
-     * @param RequestInterface $request Request to send
-     * @param array            $options Request options to apply to the given
+     * @param RequestInterface $request Requests to send
+     * @param array            $options Requests options to apply to the given
      *                                  request and to the transfer.
      *
      * @return PromiseInterface
@@ -49,7 +49,7 @@ interface ClientInterface
      *
      * @param string              $method  HTTP method.
      * @param string|UriInterface $uri     URI object or string.
-     * @param array               $options Request options to apply.
+     * @param array               $options Requests options to apply.
      *
      * @return ResponseInterface
      * @throws GuzzleException
@@ -66,7 +66,7 @@ interface ClientInterface
      *
      * @param string              $method  HTTP method
      * @param string|UriInterface $uri     URI object or string.
-     * @param array               $options Request options to apply.
+     * @param array               $options Requests options to apply.
      *
      * @return PromiseInterface
      */

@@ -24,7 +24,7 @@ class_exists(ParameterBag::class);
 class_exists(ServerBag::class);
 
 /**
- * Request represents an HTTP request.
+ * Requests represents an HTTP request.
  *
  * The methods dealing with URL accept / return a raw path (% encoded):
  *   * getBasePath
@@ -82,7 +82,7 @@ class Request
     public $attributes;
 
     /**
-     * Request body parameters ($_POST).
+     * Requests body parameters ($_POST).
      *
      * @var ParameterBag
      */
@@ -303,7 +303,7 @@ class Request
     }
 
     /**
-     * Creates a Request based on a given URI and configuration.
+     * Creates a Requests based on a given URI and configuration.
      *
      * The information contained in the URI always take precedence
      * over the other information (server and parameters).
@@ -411,9 +411,9 @@ class Request
     }
 
     /**
-     * Sets a callable able to create a Request instance.
+     * Sets a callable able to create a Requests instance.
      *
-     * This is mainly useful when you need to override the Request class
+     * This is mainly useful when you need to override the Requests class
      * to keep BC with an existing system. It should not be used for any
      * other purpose.
      */
@@ -574,7 +574,7 @@ class Request
      * You should only list the reverse proxies that you manage directly.
      *
      * @param array $proxies          A list of trusted proxies, the string 'REMOTE_ADDR' will be replaced with $_SERVER['REMOTE_ADDR']
-     * @param int   $trustedHeaderSet A bit field of Request::HEADER_*, to set which headers to trust from your proxies
+     * @param int   $trustedHeaderSet A bit field of Requests::HEADER_*, to set which headers to trust from your proxies
      *
      * @throws \InvalidArgumentException When $trustedHeaderSet is invalid
      */
@@ -605,7 +605,7 @@ class Request
     /**
      * Gets the set of trusted headers from trusted proxies.
      *
-     * @return int A bit field of Request::HEADER_* that defines which headers are trusted from your proxies
+     * @return int A bit field of Requests::HEADER_* that defines which headers are trusted from your proxies
      */
     public static function getTrustedHeaderSet()
     {
@@ -644,7 +644,7 @@ class Request
      * It builds a normalized query string, where keys/value pairs are alphabetized,
      * have consistent escaping and unneeded delimiters are removed.
      *
-     * @return string A normalized query string for the Request
+     * @return string A normalized query string for the Requests
      */
     public static function normalizeQueryString(?string $qs)
     {
@@ -749,10 +749,10 @@ class Request
      * Whether the request contains a Session object.
      *
      * This method does not give any information about the state of the session object,
-     * like whether the session is started or not. It is just a way to check if this Request
+     * like whether the session is started or not. It is just a way to check if this Requests
      * is associated with a Session instance.
      *
-     * @return bool true when the Request contains a Session object, false otherwise
+     * @return bool true when the Requests contains a Session object, false otherwise
      */
     public function hasSession()
     {
@@ -807,7 +807,7 @@ class Request
      *
      * If your reverse proxy uses a different header name than "X-Forwarded-For",
      * ("Client-Ip" for instance), configure it via the $trustedHeaderSet
-     * argument of the Request::setTrustedProxies() method instead.
+     * argument of the Requests::setTrustedProxies() method instead.
      *
      * @return string|null The client IP address
      *
@@ -1021,9 +1021,9 @@ class Request
     }
 
     /**
-     * Generates a normalized URI (URL) for the Request.
+     * Generates a normalized URI (URL) for the Requests.
      *
-     * @return string A normalized URI (URL) for the Request
+     * @return string A normalized URI (URL) for the Requests
      *
      * @see getQueryString()
      */
@@ -1049,7 +1049,7 @@ class Request
     }
 
     /**
-     * Returns the path as relative reference from the current Request path.
+     * Returns the path as relative reference from the current Requests path.
      *
      * Only the URIs path component (no schema, host etc.) is relevant and must be given.
      * Both paths must be absolute and not contain relative parts.
@@ -1102,12 +1102,12 @@ class Request
     }
 
     /**
-     * Generates the normalized query string for the Request.
+     * Generates the normalized query string for the Requests.
      *
      * It builds a normalized query string, where keys/value pairs are alphabetized
      * and have consistent escaping.
      *
-     * @return string|null A normalized query string for the Request
+     * @return string|null A normalized query string for the Requests
      */
     public function getQueryString()
     {
@@ -1950,7 +1950,7 @@ class Request
             $request = (self::$requestFactory)($query, $request, $attributes, $cookies, $files, $server, $content);
 
             if (!$request instanceof self) {
-                throw new \LogicException('The Request factory must return an instance of Symfony\Component\HttpFoundation\Request.');
+                throw new \LogicException('The Requests factory must return an instance of Symfony\Component\HttpFoundation\Requests.');
             }
 
             return $request;

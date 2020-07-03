@@ -18,7 +18,7 @@ final class TransferStats
     private $handlerErrorData;
 
     /**
-     * @param RequestInterface       $request          Request that was sent.
+     * @param RequestInterface       $request          Requests that was sent.
      * @param ResponseInterface|null $response         Response received (if any)
      * @param float|null             $transferTime     Total handler transfer time.
      * @param mixed                  $handlerErrorData Handler error data.

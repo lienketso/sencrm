@@ -56,7 +56,7 @@ class CredentialProvider
      * Create a default credential provider that first checks for environment
      * variables, then checks for the "default" profile in ~/.aws/credentials,
      * then checks for "profile default" profile in ~/.aws/config (which is
-     * the default profile of AWS CLI), then tries to make a GET Request to
+     * the default profile of AWS CLI), then tries to make a GET Requests to
      * fetch credentials if Ecs environment variable is presented, then checks
      * for credential_process in the "default" profile in ~/.aws/credentials,
      * then for credential_process in the "default profile" profile in
