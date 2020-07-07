@@ -10,6 +10,7 @@ namespace Product\Model;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Package\Model\Package;
 
 class Product extends Model
 {
@@ -23,6 +24,10 @@ class Product extends Model
     public function setDiscountAttribute($val)
     {
         $this->attributes['discount'] = str_replace(',','',$val);
+    }
+
+    public function getPackage(){
+        return $this->belongstoMany(Package::class,'product_package','product_id','package_id')->withPivot('price');
     }
 
 }

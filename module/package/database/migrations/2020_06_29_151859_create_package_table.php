@@ -18,6 +18,7 @@ class CreatePackageTable extends Migration
             $table->string('name')->nullable();
             $table->text('content')->nullable();
             $table->double('price')->default(0); //Giá trị gói
+            $table->double('discount')->default(0); //Giá mỗi sản phẩm
             $table->integer('is_order')->default(0); //Thứ tự sắp xếp
             $table->enum('status',['active','disable'])->default('active'); //Thứ tự sắp xếp
             $table->timestamps();

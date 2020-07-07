@@ -13,7 +13,7 @@
     <script>
         $(document).ready(function () {
             $('#price').mask('000,000,000', {reverse:true});
-            $('#disprice').mask('000,000,000', {reverse:true})
+            $('#discount').mask('000,000,000', {reverse:true})
         });
     </script>
 @endsection
@@ -81,9 +81,21 @@
                                     <input type="text"
                                            class="form-control"
                                            autocomplete="off"
+                                           placeholder="Giá trị tối thiểu để được triết khấu"
                                            name="price"
                                            id="price"
                                            value="{{old('price')}}"
+                                    >
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Giá sản phẩm ( VNĐ )  </label>
+                                    <input type="text"
+                                           class="form-control"
+                                           autocomplete="off"
+                                           placeholder="Giá bán ra đã triết khấu theo gói"
+                                           name="discount"
+                                           id="discount"
+                                           value="{{old('discount')}}"
                                     >
                                 </div>
 

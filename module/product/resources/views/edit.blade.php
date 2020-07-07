@@ -121,6 +121,20 @@
                                            value="{{number_format($data->discount)}}"
                                     >
                                 </div>
+                                @foreach($listPackage as $row)
+                                <div class="form-group">
+                                    <input type="hidden" name="package_id[]" value="{{$row->id}}">
+                                    <label class="form-control-label">Giá {{$row->name}} ( VNĐ )</label>
+                                    <input type="text"
+                                           class="form-control"
+                                           autocomplete="off"
+                                           name="package_price[{{$row->id}}][]"
+                                           id=""
+                                           value=""
+                                    >
+                                </div>
+                                @endforeach
+
                                 <div class="form-group">
                                     <label class="form-control-label">Mô tả sản phẩm</label>
                                     <textarea class="form-control" id="ckeditors" name="excerpt" rows="4">{{$data->excerpt}}</textarea>
