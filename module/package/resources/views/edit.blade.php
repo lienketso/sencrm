@@ -92,7 +92,7 @@
                                     >
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-control-label">Giá trị gói ( VNĐ )  </label>
+                                    <label class="form-control-label">Giá sản phẩm ( VNĐ )  </label>
                                     <input type="text"
                                            class="form-control"
                                            autocomplete="off"

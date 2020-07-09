@@ -21,7 +21,9 @@ class Package extends Model
     }
 
     public function getProduct(){
-        return $this->hasMany(Product::class,'product_id','id');
+        return $this->belongstoMany(Product::class,'product_package','package_id','product_id')
+            ->withPivot('package_price');
     }
+
 
 }

@@ -17,7 +17,7 @@ class CreateProductPackageTable extends Migration
             $table->increments('id');
             $table->integer('product_id')->default(0);
             $table->integer('package_id')->default(0);
-            $table->double('price')->default(0);
+            $table->double('package_price')->default(0);
             $table->timestamps();
         });
     }

@@ -11,8 +11,9 @@ class ProductPackage extends Model
     protected $table = 'product_package';
     protected $fillable = ['product_id','package_id','price'];
 
-    public function setPriceAtribute($val){
-        $this->attributes['price'] = str_replace(',','',$val);
+    public function setPackagePriceAtribute($val){
+        $this->attributes['package_price'] = str_replace(',','',$val);
     }
+
 
 }

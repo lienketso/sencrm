@@ -18,7 +18,7 @@ class ModuleProvider extends ServiceProvider
     {
         Helper::loadModuleHelpers(__DIR__);
         $this->app->register(RouteProvider::class);
-        $this->app->register(HookProvider::class);
+        //$this->app->register(HookProvider::class);
         $this->app->register(InstallModuleProvider::class);
         $this->app->register(MiddlewareProvider::class);
 

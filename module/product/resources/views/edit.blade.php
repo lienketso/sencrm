@@ -128,9 +128,9 @@
                                     <input type="text"
                                            class="form-control"
                                            autocomplete="off"
-                                           name="package_price[{{$row->id}}][]"
+                                           name="package_price[]"
                                            id=""
-                                           value=""
+                                           value="{{$row->getProduct()->first()->pivot->package_price}}"
                                     >
                                 </div>
                                 @endforeach
