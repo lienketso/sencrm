@@ -130,7 +130,7 @@
                                            autocomplete="off"
                                            name="package_price[]"
                                            id=""
-                                           value="{{$row->getProduct()->first()->pivot->package_price}}"
+                                           value="{{$row->getProduct->first()->pivot->package_price}}"
                                     >
                                 </div>
                                 @endforeach

@@ -9,8 +9,9 @@
 	<link rel="icon" href="{{ asset('adminux/favicon.ico') }}">
 	<title>Sendatviet CRM</title>
 	<!-- Fontawesome icon CSS -->
+	<link rel="stylesheet" href="{{ asset('adminux/css/fix.css') }}" type="text/css">
 	<link rel="stylesheet" href="{{ asset('adminux/vendor/font-awesome-4.7.0/css/font-awesome.min.css') }}" type="text/css">
-	
+
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="{{ asset('adminux/vendor/bootstrap4beta/css/bootstrap.css') }}" type="text/css">
 	

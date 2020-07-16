@@ -30,4 +30,5 @@ class Product extends Model
         return $this->belongstoMany(Package::class,'product_package','product_id','package_id')->withPivot('package_price');
     }
 
+
 }

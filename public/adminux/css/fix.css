@@ -1,0 +1,19 @@
+.price-package{
+    color: #cb171f;
+}
+.img-package img{
+    max-width: 100%;
+}
+.giagoc{
+    text-decoration: line-through;
+}
+.giaban{
+    font-weight: bold;
+    color: #9f041b;
+}
+.price-pro p{
+    margin-bottom: 5px;
+}
+.comment-list > .media{
+    border-top: 1px solid #ccc;
+}

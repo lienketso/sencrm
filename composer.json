@@ -50,6 +50,7 @@
             "Hook\\": "module/hook/src",
             "Product\\": "module/product/src",
             "Package\\": "module/package/src",
+            "Shoping\\": "module/shoping/src",
             "Setting\\": "module/setting/src"
         }
     },

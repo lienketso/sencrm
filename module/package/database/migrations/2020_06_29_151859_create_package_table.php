@@ -16,11 +16,11 @@ class CreatePackageTable extends Migration
         Schema::create('package', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->nullable();
+            $table->string('description')->nullable();
             $table->text('content')->nullable();
             $table->double('price')->default(0); //Giá trị gói
-            $table->double('discount')->default(0); //Giá mỗi sản phẩm
             $table->integer('is_order')->default(0); //Thứ tự sắp xếp
-            $table->enum('status',['active','disable'])->default('active'); //Thứ tự sắp xếp
+            $table->enum('status',['active','disable'])->default('active'); //Trạng thái hiển thị
             $table->timestamps();
         });
     }

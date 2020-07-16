@@ -88,17 +88,9 @@
                                     >
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-control-label">Giá sản phẩm ( VNĐ )  </label>
-                                    <input type="text"
-                                           class="form-control"
-                                           autocomplete="off"
-                                           placeholder="Giá bán ra đã triết khấu theo gói"
-                                           name="discount"
-                                           id="discount"
-                                           value="{{old('discount')}}"
-                                    >
+                                    <label class="form-control-label">Mô tả ngắn</label>
+                                    <textarea class="form-control" id="" name="description" rows="4">{{old('description')}}</textarea>
                                 </div>
-
                                 <div class="form-group">
                                     <label class="form-control-label">Thông tin gói sản phẩm</label>
                                     <textarea class="form-control" id="ckeditor" name="content" rows="4">{{old('content')}}</textarea>

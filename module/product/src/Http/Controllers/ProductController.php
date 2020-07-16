@@ -57,7 +57,7 @@ class ProductController extends BaseController
         $listPackage = Package::with(['getProduct'=>function($e) use($id){
             $e->where('product_id',$id);
         }])
-            ->where('status',1)
+            ->where('status','active')
             ->get();
         //dd($listPackage);die;
         $data = $this->lt->find($id);
