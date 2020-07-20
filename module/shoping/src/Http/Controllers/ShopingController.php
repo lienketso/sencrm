@@ -6,6 +6,7 @@ namespace Shoping\Http\Controllers;
 
 use Barryvdh\Debugbar\Controllers\BaseController;
 use Barryvdh\Debugbar\LaravelDebugbar;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Package\Repositories\PackageRepositories;
 use Product\Repositories\ProductRepositories;
@@ -40,6 +41,20 @@ class ShopingController extends BaseController
         }])->get();
 
         return view('nqadmin-shoping::detail',['data'=>$data,'diferencePackage'=>$diferencePackage,'product'=>$product]);
+    }
+
+    function getAdd($id){
+        $product = $this->po->find($id);
+        $cartInfo = [
+            'id'=>$product->id,
+            'name'=>$product->name,
+            'price'=>$product->price,
+            'options'=>['thumbnail'=>$product->thumbnail],
+            'qty'=>1
+        ];
+        Cart::add($cartInfo);
+        $cart = Cart::content();
+        //dd($cart);
     }
 
 }

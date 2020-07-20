@@ -111,16 +111,7 @@
                                            value="{{number_format($data->price)}}"
                                     >
                                 </div>
-                                <div class="form-group">
-                                    <label class="form-control-label">Giá khuyến mại ( VNĐ )</label>
-                                    <input type="text"
-                                           class="form-control"
-                                           autocomplete="off"
-                                           name="discount"
-                                           id="disprice"
-                                           value="{{number_format($data->discount)}}"
-                                    >
-                                </div>
+
                                 @foreach($listPackage as $row)
                                 <div class="form-group">
                                     <input type="hidden" name="package_id[]" value="{{$row->id}}">

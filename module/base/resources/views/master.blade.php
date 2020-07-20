@@ -97,6 +97,7 @@
 <script src="{{ asset('adminux/parsleyjs/parsley-init.js') }}" type="text/javascript"></script>
 
 
+
 	<script type="text/javascript">
 		var button1 = document.getElementById( 'ckfinder-popup-1' );
 		button1.onclick = function() {

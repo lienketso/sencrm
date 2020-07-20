@@ -12,5 +12,7 @@ Route::group(['prefix'=>$adminRoute], function(Router $router) use ($adminRoute,
             ->name('nqadmin::shoping.index.get');
         $router->get('detail/{id}','ShopingController@getDetail')
             ->name('nqadmin::shoping.detail.get');
+        $router->get('add/{id}','ShopingController@getAdd')
+            ->name('nqadmin::shoping.add.get');
     });
 });

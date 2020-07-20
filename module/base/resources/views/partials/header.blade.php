@@ -14,7 +14,7 @@
 		@endphp
 		<div class="sidebar-right pull-right " >
 			<ul class="navbar-nav  justify-content-end">
-
+				<li class="align-self-center hidden-md-down"> <a href="#" class="btn btn-sm btn-primary mr-2"><span class="fa fa-shopping-basket "></span> Giỏ hàng ( {{ \Gloudemans\Shoppingcart\Facades\Cart::count() }} )</a> </li>
 				<li class="nav-item">
 					<button class="btn-link btn userprofile"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="userpic">
 						@if (!empty($user->thumbnail))

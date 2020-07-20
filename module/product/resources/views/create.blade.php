@@ -103,16 +103,7 @@
                                            value="{{old('price')}}"
                                     >
                                 </div>
-                                <div class="form-group">
-                                    <label class="form-control-label">Giá khuyến mại ( VNĐ )</label>
-                                    <input type="text"
-                                           class="form-control"
-                                           autocomplete="off"
-                                           name="discount"
-                                           id="disprice"
-                                           value="{{old('discount')}}"
-                                    >
-                                </div>
+
                                 <div class="form-group">
                                     <label class="form-control-label">Mô tả sản phẩm</label>
                                     <textarea class="form-control" id="ckeditors" name="excerpt" rows="4">{{old('excerpt')}}</textarea>

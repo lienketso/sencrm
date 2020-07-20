@@ -50,14 +50,22 @@
             <div class="col-md-16 col-sm-16 col-lg-8 col-xl-8">
                 <div class="list-unstyled comment-list" style="">
                     <h4>DANH SÁCH SẢN PHẨM</h4>
-                    <p>Danh sách các gói sản phẩm được triết khấu theo gói</p>
+                    <p>Danh sách các sản phẩm được triết khấu theo gói</p>
                     @foreach($product as $row)
                     <div class="media">
+                        <span class="message_userpic">
+                            @if (!empty($row->thumbnail))
+                                <img src="{{ asset($row->thumbnail) }}" alt="{{ $row->name }}" class="d-flex">
+                            @else
+                                <img src="{{ asset('adminux/img/advertise_maxartkiller_ui-ux.png') }}" class="d-flex">
+                            @endif
+                        </span>
                         <div class="media-body">
                             <h6 class="mt-0 mb-1">{{$row->name}}</h6>
                             <div class="price-pro">
                                 <p>Giá gốc : <span class="giagoc">{{number_format($row->price)}}</span> đ</p>
                                 <p>Giá theo gói : <span class="giaban">{{number_format($row->getPackage->first()->pivot->package_price)}}</span> đ / hộp</p>
+                                <a href="{{route('nqadmin::shoping.add.get',$row->id)}}" class="btn btn-warning"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Chọn sản phẩm</a>
                             </div>
                         </div>
                     </div>
@@ -81,9 +89,9 @@
                     <figure class="product_img  align-items-center justify-content-between d-flex">
                         <img class="" src="{{ asset('adminux/img/package.png') }}" alt=""></figure>
                     <div class="card-body">
-                        <h5 class="card-title text-white">{{ $data->name }} </h5>
-                        <h3>{{ number_format($data->price) }}</h3>
-                        <p class="card-text">{{ $data->description }}</p>
+                        <h5 class="card-title text-white">{{ $row->name }} </h5>
+                        <h3>{{ number_format($row->price) }} đ</h3>
+                        <p class="card-text">{{ $row->description }}</p>
                     </div>
                     <div class="card-body justify-content-between d-flex">
                         <a href="#" class="btn btn-primary">Đặt hàng</a>

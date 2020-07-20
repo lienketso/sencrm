@@ -57,6 +57,7 @@ class ProductController extends BaseController
         $listPackage = Package::with(['getProduct'=>function($e) use($id){
             $e->where('product_id',$id);
         }])
+            ->orderBy('is_order','asc')
             ->where('status','active')
             ->get();
         //dd($listPackage);die;
