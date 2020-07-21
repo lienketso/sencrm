@@ -51,6 +51,7 @@
             "Product\\": "module/product/src",
             "Package\\": "module/package/src",
             "Shoping\\": "module/shoping/src",
+            "Transaction\\": "module/transaction/src",
             "Setting\\": "module/setting/src"
         }
     },

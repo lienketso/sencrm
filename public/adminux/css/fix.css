@@ -17,3 +17,10 @@
 .comment-list > .media{
     border-top: 1px solid #ccc;
 }
+#mesAlert{
+    color: #2ab27b;
+}
+.messOrder{
+    font-weight: bold;
+    color: #2ab27b;
+}
