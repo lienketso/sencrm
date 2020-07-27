@@ -108,6 +108,12 @@ if (!function_exists('convert_flash_message')) {
             case 'delete':
                 $m = config('messages.success_delete');
                 break;
+            case 'cancel':
+                $m = config('messages.cancel');
+                break;
+            case 'role':
+                $m = config('messages.role_error');
+                break;
             default:
                 $m = config('messages.success_create');
         }

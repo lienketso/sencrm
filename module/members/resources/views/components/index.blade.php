@@ -8,45 +8,15 @@
 
 @endsection
 @section('js-init')
-    <script type="text/javascript">
-        // var $jq = jQuery.noConflict();
-        $(document).ready(function () {
 
-            $("#org").jOrgChart({
-                chartElement: '#chart',
-                dragAndDrop: false,
-                slider: true
-            });
-
-            $('#chart .cgsnode').tooltip();
-
-            $('#chart').kinetic();
-        });
-    </script>
 @endsection
 @section('content')
-    <style type="text/css">
-        .jOrgChart {
-            margin: 10px;
-            padding: 20px;
-        }
+    @php
+        $user = Auth::user();
+        $roles = $user->load('roles.perms');
+        $permissions = $roles->roles->first()->perms;
+    @endphp
 
-        .jOrgChart .node {
-            font-size: 14px;
-            background-color: #35363B;
-            border-radius: 8px;
-            border: 5px solid white;
-            color: #F38630;
-            -moz-border-radius: 8px;
-        }
-
-        .node label {
-            font-family: tahoma;
-            font-size: 14px;
-            line-height: 20px;
-            padding-top: 30px;
-        }
-    </style>
     <div class="wrapper-content">
         <div class="container">
             <div class="row  align-items-center justify-content-between">
@@ -55,23 +25,78 @@
                     <p>Danh sách thành viên trong nhóm</p>
                 </div>
             </div>
-            <div class="personal_contain">
-                <ul id="org" style="display:none">
-                    <li>
-                        <label>{{$user_online->fullname}}</label>
-                        {!! $tree !!}
-                    </li>
-                </ul>
 
-                <div id="chart" style="height:500px;padding-bottom: 80px;" class="orgChart">
-                    <div class="zoom">
-                        <span class="zoom_control">+</span>
+            <div class="row">
+                <div class="col-sm-16">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Danh sách thành viên
+                                @if ($permissions->contains('name','member_create'))
+                                    <a href="{{route('nqadmin::members.create.get')}}" class="btn btn-primary pull-right">
+                                        <i class="fa fa-plus" aria-hidden="true"></i> Thêm mới thành viên
+                                    </a>
+                                @endif
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            @if (count($errors) > 0)
+                                @foreach($errors->all() as $e)
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <strong>Lỗi!</strong> {{$e}}
+                                    </div>
+                                @endforeach
+                            @endif
+                            {!! \Base\Supports\FlashMessage::renderMessage('create') !!}
+                                {!! \Base\Supports\FlashMessage::renderMessage('edit') !!}
+                            {!! \Base\Supports\FlashMessage::renderMessage('delete') !!}
+                            <table class="table" id="">
+                                <thead>
+                                <tr>
+                                    <th>Thành viên</th>
+                                    <th>Email</th>
+                                    <th>Vai trò</th>
+                                    <th>Trạng thái</th>
+                                    <th width="100">Tùy chọn</th>
+                                </tr>
+                                </thead>
+                                <tbody>
 
-                        <div id="zoom_slider"></div>
-                        <span class="zoom_control">-</span>
+                                @foreach($data as $d)
+                                    <tr class="{{ $loop->index % 2 == 0 ? 'odd' : 'even' }}">
+                                        <td style="display: flex">
+                                            @if ($d->avatar != null)
+                                                <img src="{{ asset($d->avatar) }}" alt="{{ $d->email }}" class="gridpic">
+                                            @else
+                                                <img src="{{ asset('adminux/img/user-header.png') }}" alt="{{ $d->email }}" class="gridpic">
+                                            @endif
+                                            <p>{{$d->fullname}}</p>
+                                        </td>
+                                        <td>{{ $d->email }}</td>
+                                        <td class="center">{{ $d->getRole() }}</td>
+                                        <td class="center">
+                                            @if($d->status=='disable')
+                                            <span class="status danger">Chưa kích hoạt</span>
+                                            @else
+                                                <span class="status success">Đang sử dụng</span>
+                                                @endif
+                                        </td>
+                                        <td class="center">
+                                            @if ($permissions->contains('name','member_edit'))
+                                                <a href="{{route('nqadmin::members.edit.get', ['id' => $d->id])}}" class=" btn btn-link btn-sm "><i class="fa fa-edit"></i></a>
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                            <!-- /.table-responsive -->
+                            {{$data->links()}}
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 @endsection

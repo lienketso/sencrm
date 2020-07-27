@@ -11,29 +11,38 @@ namespace Transaction\Http\Controllers;
 use Barryvdh\Debugbar\Controllers\BaseController;
 use Base\Supports\FlashMessage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Shoping\Repositories\OrderRepositories;
 use Shoping\Repositories\TransactionRepositories;
+use function GuzzleHttp\Promise\all;
 
 class TransactionController extends BaseController
 {
     protected $tran;
+    protected $or;
 
-    public function __construct(TransactionRepositories $transactionRepository)
+    public function __construct(TransactionRepositories $transactionRepository, OrderRepositories $orderRepositories)
     {
         $this->tran = $transactionRepository;
+        $this->or = $orderRepositories;
     }
 
     public function getIndex()
     {
-        $transaction = $this->tran->orderBy('created_at', 'desc')
-            ->all(['id', 'package_id', 'amount', 'status', 'created_at']);
+        $userid = Auth::id();
+        $data = $this->tran->scopeQuery(function ($e) use ($userid){
+            return $e->orderBy('created_at','desc')->where('user_id',$userid);
+        })->paginate(20);
         return view('nqadmin-transaction::index', [
-            'data' => $transaction
+            'data' => $data
         ]);
     }
 
-    public function getCreate()
+    public function getOrder($id)
     {
-        return view('nqadmin-transaction::create');
+        $data = $this->tran->find($id);
+        $order = $this->or->findWhere(['transaction_id'=>$id])->all();
+        return view('nqadmin-transaction::order',['data'=>$data,'order'=>$order]);
     }
 
 
@@ -41,32 +50,20 @@ class TransactionController extends BaseController
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function getEdit($id)
+    public function getStatus($id)
     {
-        $data = $this->tran->find($id);
-        return view('nqadmin-transaction::edit', [
-            'data' => $data
-        ]);
+        $data = [
+            'status'=>'cancel'
+        ];
+        try{
+            $this->tran->update($data,$id);
+            return redirect()->back()->with(FlashMessage::returnMessage('cancel'));
+        }catch (\Exception $e){
+            return $e->getMessage();
+        }
+
     }
 
-    /**
-     * @param RankEditValidate $request
-     * @param $id
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function postEdit(Request $request, $id)
-    {
-        $status = $request->get('status');
-        $data = [
-            'status' => $status
-        ];
-        try {
-            $this->tran->update($data, $id);
-            return redirect()->route('nqadmin::transaction.index.get')->with(FlashMessage::returnMessage('create'));
-        } catch (\Exception $e) {
-            return redirect()->back()->withErrors(config('messages.error'));
-        }
-    }
 
     /**
      * @param $id

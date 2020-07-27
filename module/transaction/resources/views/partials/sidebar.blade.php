@@ -1,6 +1,6 @@
 @php
     $listRoute = [
-         'nqadmin::transaction.index.get', 'nqadmin::transaction.edit.get'
+         'nqadmin::transaction.index.get', 'nqadmin::transaction.order.get'
     ];
 
 @endphp
@@ -9,7 +9,7 @@
     <ul class="nav flex-column nav-second-level">
         <li class="nav-item {{in_array(Route::currentRouteName(), $listRoute) ? 'active' : '' }}">
             <a href="{{route('nqadmin::transaction.index.get')}}" class="nav-link {{in_array(Route::currentRouteName(), $listRoute) ? 'active' : '' }}">
-                <i class="fa fa-flag-checkered" aria-hidden="true"></i> Danh sách giao dịch
+                <i class="fa fa-flag-checkered" aria-hidden="true"></i> Danh sách đơn hàng
             </a>
         </li>
 

@@ -42,8 +42,7 @@
                                     </div>
                                 @endforeach
                             @endif
-                            {!! \Base\Supports\FlashMessage::renderMessage('create') !!}
-                            {!! \Base\Supports\FlashMessage::renderMessage('delete') !!}
+                            {!! \Base\Supports\FlashMessage::renderMessage('cancel') !!}
                             <table class="table" id="">
                                 <thead>
                                 <tr>
@@ -53,13 +52,14 @@
                                     <th>Tổng tiền</th>
                                     <th>Tình trạng</th>
                                     <th>Xem đơn hàng</th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
 
                                 @foreach($data as $d)
                                     <tr class="{{ $loop->index % 2 == 0 ? 'odd' : 'even' }}">
-                                        <td><a href="#" target="_blank">#DH{{$d->id}}</a></td>
+                                        <td><a href="{{route('nqadmin::transaction.order.get',['id'=>$d->id])}}" target="_blank">#DH{{$d->id}}</a></td>
                                         <td>
                                            {{datetoformat($d->created_at)}}
                                         </td>
@@ -69,22 +69,31 @@
                                         </td>
                                         <td>
                                             @if($d->status=='disable')
-                                            <span class="badge badge-danger">Đợi duyệt</span>
+                                            <span class="badge badge-warning">Đợi duyệt...</span>
                                             @endif
                                             @if($d->status=='active')
-                                                    <span class="badge badge-primary">Đã giao </span>
+                                                    <span class="badge badge-primary">Đã xác nhận </span>
                                             @endif
                                                 @if($d->status=='cancel')
-                                                    <span class="status warning">Đã hủy </span>
+                                                    <span class="badge badge-danger">Đã hủy </span>
                                                 @endif
                                         </td>
-                                        <td><a href="#">Xem ngay</a></td>
-
+                                        <td><a href="{{route('nqadmin::transaction.order.get',['trans_id'=>$d->id])}}">Xem ngay</a></td>
+                                        <td>
+                                            @if($d->status=='disable')
+                                            <a href="" data-toggle="confirmcancel" data-url="{{route('nqadmin::transaction.status.get',$d->id)}}" class="btn btn-danger">Hủy đơn</a>
+                                                @endif
+                                        </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
                             <!-- /.table-responsive -->
+                                <div class="row">
+                                    <div class="container ">
+                                        {{$data->links()}}
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>

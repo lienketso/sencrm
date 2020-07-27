@@ -19,7 +19,7 @@ class CreateTransactionTable extends Migration
             $table->integer('package_id')->default(0);
             $table->double('amount')->default(0);
             $table->text('content')->nullable();
-            $table->enum('status',['active','disable'])->default('disable');
+            $table->enum('status',['active','disable','cancel'])->default('disable');
             $table->timestamps();
         });
     }

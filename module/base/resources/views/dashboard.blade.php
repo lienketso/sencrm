@@ -1,11 +1,28 @@
 @extends('nqadmin-dashboard::master')
+
+@section('js-init')
+    <script type="text/javascript">
+        function copyLink() {
+            var textCopy = document.getElementById('linkcopy');
+            textCopy.select();
+            textCopy.setSelectionRange(0, 99999)
+            document.execCommand("copy");
+            alert("Copied the text: " + textCopy.value);
+        }
+    </script>
+@endsection
+
 @section('content')
 
 <div class="wrapper-content">
 	<div class="container">
+
 		<div class="row  align-items-center justify-content-between">
+
 			<div class="col-11 col-sm-12 page-title">
-				<h3>Dashboard</h3>
+                {!! \Base\Supports\FlashMessage::renderMessage('role') !!}
+                <h3>Bảng điều khiển</h3>
+                <p>Liên kết giới thiệu của bạn : <input type="text" id="linkcopy" value="http://sendatviet.com.vn?affiliate=ABCDEF" readonly style="width: 400px"><button onclick="copyLink()" type="button">Copy link</button></p>
 			</div>
 		</div>
 		<div class="row">
@@ -14,7 +31,7 @@
 					<div class="media">
 						<div class="media-body">
 							<h5>$ <span>20</span></h5>
-							<p>Month Profit</p>
+							<p>Doanh số cá nhân</p>
 						</div>
 						<i class="fa fa-cubes"></i> </div>
 					<br>
@@ -32,7 +49,7 @@
                     <div class="media">
                         <div class="media-body">
                             <h5><span class="spincreament">50</span></h5>
-                            <p>Active Users in month</p>
+                            <p>Doanh số đội nhóm</p>
                         </div>
                         <i class="fa fa-users"></i> </div>
                     <br>

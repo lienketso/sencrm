@@ -10,7 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Routing\Router;
+use Illuminate\Routing\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('test-router', function (){
+   return 'trang đăng ký';
 });
+
+//Route::get('/', function () {
+//    return view('welcome');
+//});

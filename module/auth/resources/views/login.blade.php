@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="CSGO Dashboard">
-	<meta name="author" content="lelong310590">
+	<meta name="description" content="Sendatviet Dashboard">
+	<meta name="author" content="wiseman">
 	<link rel="icon" href="{{ asset('adminux/favicon.ico') }}">
 	<title>Sendatviet CRM Login</title>
 	<!-- Fontawesome icon CSS -->
@@ -39,7 +39,7 @@
 	<div class="col-md-8 offset-md-8 text-left side_signing_full">
 		<form class="form-signin1 full_side text-white" method="post">
 			{{ csrf_field() }}
-			<h2 class="tex-black mb-4">Log in</h2>
+			<h2 class="tex-black mb-4">Đăng nhập</h2>
 			@if (count($errors) > 0)
 				<div class="alert alert-danger alert-dismissible fade show" role="alert">
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
@@ -53,10 +53,10 @@
 			<label  class="sr-only">Email</label>
 			<input type="text" class="form-control" placeholder="Email" name="email">
 			<br>
-			<label class="sr-only">Password</label>
+			<label class="sr-only">Mật khẩu</label>
 			<input type="password" class="form-control" placeholder="Password" name="password">
 			<br>
-			<button type="submit" class="btn btn-lg btn-primary btn-round">Log in</button> <br>
+			<button type="submit" class="btn btn-lg btn-primary btn-round">Đăng nhập</button> <br>
 			<br>
 		</form>
 		<br>

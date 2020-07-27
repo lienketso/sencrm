@@ -6,9 +6,10 @@
  * Time: 11:30 AM
  */
 return [
-	'success_edit' => 'this record(s) have been updated',
-	'success_delete' => 'this record(s) have been deleted',
-	'success_create' => 'a new record has been created',
+	'success_edit' => 'Cập nhật dữ liệu(s) thành công',
+	'success_delete' => 'Xóa dữ liệu(s) thành công',
+	'success_create' => 'Thêm mới dữ liệu(s) thành công',
+    'cancel'=>'Đơn hàng (s) đã hủy',
 	'error' => 'An error has occurred, please recheck the input',
-	'role_error' => 'This role is being applied, Please remove this role from the account and delete it again'
+	'role_error' => 'Bạn không có quyền sử dụng chức năng này, liên hệ Admin'
 ];

@@ -52,7 +52,8 @@
             "Package\\": "module/package/src",
             "Shoping\\": "module/shoping/src",
             "Transaction\\": "module/transaction/src",
-            "Setting\\": "module/setting/src"
+            "Setting\\": "module/setting/src",
+            "Guest\\": "module/guest/src"
         }
     },
     "autoload-dev": {

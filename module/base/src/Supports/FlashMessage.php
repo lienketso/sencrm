@@ -22,9 +22,15 @@ class FlashMessage
 		
 		$html = '';
 		if (\Session::has($mess)) {
-			$html = '<div class="alert alert-info alert-dismissible fade show" role="alert">
+			if($mess=='role') {
+                $html = '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
+              <strong>Warning !</strong> ' . $m . '</div>';
+            }else{
+                $html = '<div class="alert alert-info alert-dismissible fade show" role="alert">
               <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">×</span> </button>
               <strong>Success!</strong> '.$m.'</div>';
+            }
 		}
 		return $html;
 	}

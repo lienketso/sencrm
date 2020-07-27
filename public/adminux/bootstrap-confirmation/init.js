@@ -18,5 +18,24 @@ $(document).on("ready", function () {
             cancel: function () {
             }
         }
-    })
-})
+    });
+    //hủy đơn
+    $('[data-toggle=confirmcancel]').confirm({
+        title: 'Hủy đơn?',
+        theme: 'dark',
+        icon: 'fa fa-question',
+        content: 'Bạn có chắc chắn muốn hủy đơn này không, click OK để hủy đơn !',
+        autoClose: 'cancel|10000',
+        buttons: {
+            confirm: {
+                text: 'Ok',
+                action: function (e) {
+                    window.location.href = this.$target.attr('data-url');
+                }
+            },
+            cancel: function () {
+            }
+        }
+    });
+
+});

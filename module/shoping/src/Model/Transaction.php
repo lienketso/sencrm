@@ -6,6 +6,7 @@ namespace Shoping\Model;
 
 use Illuminate\Database\Eloquent\Model;
 use Package\Model\Package;
+use Users\Models\Users;
 
 class Transaction extends Model
 {
@@ -14,6 +15,9 @@ class Transaction extends Model
 
     public function getPackage(){
         return $this->belongsTo(Package::class,'package_id','id');
+    }
+    public function getUser(){
+        return $this->belongsTo(Users::class,'user_id','id');
     }
 
 }
