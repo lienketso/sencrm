@@ -22,7 +22,7 @@
 			<div class="col-11 col-sm-12 page-title">
                 {!! \Base\Supports\FlashMessage::renderMessage('role') !!}
                 <h3>Bảng điều khiển</h3>
-                <p>Liên kết giới thiệu của bạn : <input type="text" id="linkcopy" value="http://sendatviet.com.vn?affiliate=ABCDEF" readonly style="width: 400px"><button onclick="copyLink()" type="button">Copy link</button></p>
+                <p>Liên kết giới thiệu của bạn : <input type="text" id="linkcopy" value="{{route('guest::dangky.post',['affiliate'=>$userLog->code_name])}}" readonly style="width: 400px"><button onclick="copyLink()" type="button">Copy link</button></p>
 			</div>
 		</div>
 		<div class="row">

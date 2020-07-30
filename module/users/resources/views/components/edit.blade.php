@@ -57,7 +57,19 @@
 
 							</h5>
 						</div>
+
+
 						<div class="card-body">
+							<div class="form-group">
+								<label class="form-control-label">Thuộc nhánh</label>
+								<input type="hidden" name="url_member" value="{{route('ajax.users.get')}}">
+								<select id="parent" class="selectpicker form-control" name="parent" data-live-search="true">
+									<option value="0">Nhánh chính</option>
+									@if(!empty($parentCat))
+										<option selected="selected" value="{{$parentCat->id}}">{{$parentCat->fullname}}</option>
+									@endif
+								</select>
+							</div>
 							<div class="form-group">
 								<label class="form-control-label">Mã người giới thiệu ( Nếu có )</label>
 								<input type="text"
@@ -66,16 +78,6 @@
 									   name="affiliate"
 									   value="{{$data->affiliate}}"
 								>
-							</div>
-							<div class="form-group">
-								<label class="form-control-label">Thuộc nhánh</label>
-								<input type="hidden" name="url_member" value="{{route('ajax.users.get')}}">
-								<select id="parent" class="selectpicker form-control" name="parent" data-live-search="true">
-									<option value="0">Nhánh chính</option>
-									@if(!empty($parentCat))
-									<option selected="selected" value="{{$parentCat->id}}">{{$parentCat->fullname}}</option>
-										@endif
-								</select>
 							</div>
 							<div class="form-group">
 								<label class="form-control-label">Email (Sử dụng để đăng nhập)</label>

@@ -26,8 +26,8 @@
         <div class="col"></div>
         <div class="sidebar-right pull-right" >
             <ul class="navbar-nav  justify-content-end">
-                <li><a href="#" class="btn btn-link text-white" >Hỗ trợ tài khoản ?</a></li>
-                <li><a href="#" class="btn btn-primary " >Đăng nhập</a></li>
+                <li><a href="mailto:thanhan.rubee@gmail.com" class="btn btn-link text-white" >Hỗ trợ tài khoản ?</a></li>
+                <li><a href="{{route('nqadmin::auth.login.get')}}" class="btn btn-primary " >Đăng nhập</a></li>
             </ul>
         </div>
     </nav>
@@ -40,6 +40,7 @@
 
         <form class="form-signin1 white" method="post">
             {{ csrf_field() }}
+            <input type="hidden" name="affiliate" value="{{$affiliate}}">
             <h2 class="tex-black mb-4" style="color: #0c0c0c">Đăng ký tài khoản</h2>
             @if (count($errors) > 0)
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -93,7 +94,7 @@
             <button type="submit" class="btn btn-lg btn-primary btn-round">Đăng ký</button><br>
             <a href="" class="btn btn-link mt-2">Quên mật khẩu ?</a>
         </form>
-        <p class="mt-3">Bạn đã có tài khoản ? <a href="#" class="text-white">Đăng nhập ngay</a>!</p>
+        <p class="mt-3">Bạn đã có tài khoản ? <a href="{{route('nqadmin::auth.login.get')}}" class="text-white">Đăng nhập ngay</a>!</p>
     </div>
 
 </div>

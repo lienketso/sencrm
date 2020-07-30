@@ -11,7 +11,6 @@ namespace Setting\Http\Controllers;
 use Barryvdh\Debugbar\Controllers\BaseController;
 use Base\Supports\FlashMessage;
 use Illuminate\Http\Request;
-use Post\Repositories\PostRepository;
 use Setting\Repositories\SettingRepository;
 
 class SettingController extends BaseController

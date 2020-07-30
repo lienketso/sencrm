@@ -43,6 +43,11 @@ Route::group(['prefix' => $adminRoute], function (Router $router) use ($adminRou
             ->name('nqadmin::users.delete.get')
             ->middleware('permission:user_delete');
 
+        $router->get('profile/{id}','UsersController@getProfile')
+            ->name('nqadmin::users.profile.get');
+        $router->post('profile/{id}','UsersController@postProfile')
+            ->name('nqadmin::users.profile.post');
+
         $router->get('enable', 'Google2FAController@enableTwoFactor')
             ->name('nqadmin::2fa.enable');
 

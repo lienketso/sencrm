@@ -36,6 +36,18 @@
                                 </a>
                                 @endif
                             </h5>
+                            <div class="timkiemdi">
+                            <form method="get">
+                                <input type="text" name="keyword" value="{{request()->get('keyword')}}" placeholder="Tên hoặc số điện thoại" >
+                                <button type="submit" name="btntim">Tìm kiếm</button>
+                                <a href="{{route('nqadmin::users.index.get')}}"><i class="fa fa-backward"></i> Quay lại</a>
+                            </form>
+                                <ul class="loc-user">
+                                    <li><a title="click để xem" class="dkh" href="{{route('nqadmin::users.index.get',['keyword'=>'active'])}}">Đã kích hoạt ( {{$Uactive}} )</a></li>
+                                    <li><a title="click để xem" class="ckh" href="{{route('nqadmin::users.index.get',['keyword'=>'disable'])}}">Chưa kích hoạt ( {{$Udisable}} )</a></li>
+                                </ul>
+                            </div>
+
                         </div>
                         <div class="card-body">
                             @if (count($errors) > 0)
@@ -54,6 +66,7 @@
                                     <th>Thành viên</th>
                                     <th>Mã giới thiệu</th>
                                     <th>Email</th>
+                                    <th>Điện thoại</th>
                                     <th>Vai trò</th>
                                     <th>Trạng thái</th>
                                     <th width="100">Tùy chọn</th>
@@ -64,18 +77,19 @@
                                 @foreach($data as $d)
                                     <tr class="{{ $loop->index % 2 == 0 ? 'odd' : 'even' }}">
                                         <td style="display: flex">
-                                            @if ($d->avatar != null)
-                                                <img src="{{ asset($d->avatar) }}" alt="{{ $d->email }}" class="gridpic">
+                                            @if ($d->thumbnail != null)
+                                                <img src="{{ asset($d->thumbnail) }}" alt="{{ $d->fullname }}" class="gridpic">
                                             @else
-                                                <img src="{{ asset('adminux/img/user-header.png') }}" alt="{{ $d->email }}" class="gridpic">
+                                                <img src="{{ asset('adminux/img/user-header.png') }}" alt="{{ $d->fullname }}" class="gridpic">
                                             @endif
                                             <p>{{$d->fullname}}</p>
                                         </td>
                                         <td>{{$d->code_name}}</td>
                                         <td>{{ $d->email }}</td>
+                                        <td>{{ $d->phone }}</td>
                                         <td class="center">{{ $d->getRole() }}</td>
                                         <td class="center">
-                                            {!! conver_status($d->status) !!}
+                                            {!!  ($d->status=='active') ? '<span class="status success">Đã kích hoạt</span>' : '<span class="status danger">Chưa kích hoạt</span>' !!}
                                         </td>
                                         <td class="center">
                                             @if ($permissions->contains('name','user_edit'))

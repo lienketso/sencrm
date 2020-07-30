@@ -28,7 +28,9 @@
 </div>
 <!-- Page Loader Ends -->
 
-
+{{--@php--}}
+{{-- echo bcrypt(123456);--}}
+{{--@endphp--}}
 <header class="navbar-fixed">
 	<nav class="navbar navbar-toggleable-md sign-in-header">
 		<div class="sidebar-left">  <a class="navbar-brand imglogo" href="index.html"></a> </div>

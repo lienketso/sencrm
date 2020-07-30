@@ -65,10 +65,10 @@
                                 @foreach($data as $d)
                                     <tr class="{{ $loop->index % 2 == 0 ? 'odd' : 'even' }}">
                                         <td style="display: flex">
-                                            @if ($d->avatar != null)
-                                                <img src="{{ asset($d->avatar) }}" alt="{{ $d->email }}" class="gridpic">
+                                            @if ($d->thumbnail != null)
+                                                <img src="{{ asset($d->thumbnail) }}" alt="{{ $d->fullname }}" class="gridpic">
                                             @else
-                                                <img src="{{ asset('adminux/img/user-header.png') }}" alt="{{ $d->email }}" class="gridpic">
+                                                <img src="{{ asset('adminux/img/user-header.png') }}" alt="{{ $d->fullname }}" class="gridpic">
                                             @endif
                                             <p>{{$d->fullname}}</p>
                                         </td>

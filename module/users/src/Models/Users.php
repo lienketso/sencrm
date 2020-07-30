@@ -20,13 +20,16 @@ class Users extends Authenticatable
     protected $table = 'users';
 
     protected $fillable = [
-        'email', 'password', 'thumbnail', 'fullname', 'passport', 'parent', 'code_name', 'affiliate', 'phone', 'status', '_left', '_right', 'gender', 'created_at', 'updated_at', 'address', 'token'
+        'email', 'password', 'thumbnail', 'fullname', 'passport', 'parent', 'code_name', 'affiliate', 'phone', 'status', '_left', '_right', 'gender', 'birthday', 'created_at', 'updated_at', 'address', 'token'
     ];
 
     protected $hidden = [
         'password', 'remember_token', 'google2fa_secret'
     ];
 
+    function getMeta(){
+
+    }
     /**
      * @param $value
      */

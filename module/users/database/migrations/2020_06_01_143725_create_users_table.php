@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('address')->nullable();
             $table->string('thumbnail')->nullable();
             $table->enum('gender',['male','female','other'])->default('other');
+            $table->string('birthday')->nullable();
             $table->enum('status',['active','disable'])->default('disable');
             $table->integer('_left')->default(0);
             $table->integer('_right')->default(0);

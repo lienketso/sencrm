@@ -3,14 +3,13 @@ jQuery(document).ready(function($) {
     $(document).on('keyup', '.bs-searchbox input[type=search]', function (e) {
         var _this = $(e.currentTarget);
         var customerNode = $('.bs-searchbox input[type=search]').val();
-        //alert(customerNode);
         $.ajax({
             type: "GET",
             url: url,
             data: "keyword="+customerNode
         })
             .done(function(res){
-                let html = res;
+                var html = res;
                 $('#parent').html(html);
                 $('.selectpicker').selectpicker('refresh');
             })

@@ -45,6 +45,14 @@
 								</h5>
 							</div>
 							<div class="card-body">
+
+								<div class="form-group">
+									<label class="form-control-label">Thuộc nhánh</label>
+									<input type="hidden" name="url_member" value="{{route('ajax.users.get')}}">
+									<select id="parent" class="selectpicker form-control" name="parent" data-live-search="true">
+										<option value="0">Nhánh chính</option>
+									</select>
+								</div>
 								<div class="form-group">
 									<label class="form-control-label">Mã người giới thiệu ( Nếu có )</label>
 									<input type="text"
@@ -55,17 +63,9 @@
 									>
 								</div>
 								<div class="form-group">
-									<label class="form-control-label">Thuộc nhánh</label>
-									<input type="hidden" name="url_member" value="{{route('ajax.users.get')}}">
-									<select id="parent" class="selectpicker form-control" name="parent" data-live-search="true">
-										<option value="0">Nhánh chính</option>
-									</select>
-								</div>
-								<div class="form-group">
 									<label class="form-control-label">Email (Sử dụng để đăng nhập)</label>
 									<input type="email"
 									       required
-									       parsley-trigger="change"
 									       class="form-control"
 									       autocomplete="off"
 									       name="email"

@@ -17,4 +17,14 @@ class UsersMetaRepository extends BaseRepository
     {
         return UsersMeta::class;
     }
+    public function getMeta($key,$id)
+    {
+        $data = collect(['meta_value' => '']);
+        $setting = $this->findWhere(['meta_key' => $key,'users_id'=>$id], ['meta_value'])->first();
+        if (!empty($setting)) {
+            $data = $setting->meta_value;
+        }
+        return $data;
+    }
+
 }

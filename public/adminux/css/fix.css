@@ -24,3 +24,28 @@
     font-weight: bold;
     color: #2ab27b;
 }
+.timkiemdi{
+    padding: 10px 0;
+    display: flex;
+}
+ul.loc-user{
+    display: inline-flex;
+}
+ul.loc-user li{
+    list-style: none;
+    padding: 0 10px;
+}
+ul.loc-user li a{
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 5px;
+}
+ul.loc-user li a.dkh{
+    background: #2cc4cd;
+}
+ul.loc-user li a.ckh{
+    background: #ff6262;
+}
+ul.loc-user li a:hover{
+    background: #ccc;
+}
