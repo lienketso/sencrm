@@ -49,3 +49,10 @@ ul.loc-user li a.ckh{
 ul.loc-user li a:hover{
     background: #ccc;
 }
+.btnfull{
+    width: 100%;
+    padding: 15px;
+}
+.package-title{
+    font-size: 17px;
+}

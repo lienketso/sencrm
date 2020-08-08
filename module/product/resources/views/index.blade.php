@@ -31,7 +31,7 @@
                         <div class="card-header">
                             <h5 class="card-title">Danh sách sản phẩm
                                 @if ($permissions->contains('name','product_create'))
-                                    <a href="{{route('nqadmin::product.create.get')}}" class="btn btn-primary pull-right">
+                                    <a href="{{route('nqadmin::product.create.get',['type'=>$type])}}" class="btn btn-primary pull-right">
                                         <i class="fa fa-plus" aria-hidden="true"></i> Thêm mới sản phẩm
                                     </a>
                                 @endif

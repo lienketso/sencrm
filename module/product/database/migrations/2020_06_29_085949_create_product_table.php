@@ -24,6 +24,7 @@ class CreateProductTable extends Migration
             $table->double('discount')->default(0);
             $table->text('excerpt')->nullable();
             $table->string('thumbnail')->nullable();
+            $table->string('type')->default('product');
             $table->enum('status',['active','disable'])->default('active');
             $table->timestamps();
         });

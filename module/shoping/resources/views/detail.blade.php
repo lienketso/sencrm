@@ -185,15 +185,12 @@
                                         @endif
                                     </td>
                                 </tr>
-
                                 @endif
-
                         </table>
                     </div>
 
                 </div>
             </div>
-
         </div>
         <br>
         <br>
@@ -206,7 +203,6 @@
             @foreach($diferencePackage as $row)
             <div class="col-md-8 col-sm-8 col-lg-8 col-xl-4">
                 <div class="card product">
-
                     <figure class="product_img  align-items-center justify-content-between d-flex">
                         <img class="" src="{{ asset('adminux/img/package.png') }}" alt=""></figure>
                     <div class="card-body">
@@ -215,13 +211,11 @@
                         <p class="card-text">{{ $row->description }}</p>
                     </div>
                     <div class="card-body justify-content-between d-flex">
-                        <a href="#" class="btn btn-primary">Đặt hàng</a>
-                        <a href="{{ route('nqadmin::shoping.detail.get',['id'=>$row->id]) }}" class="btn btn-link ">Xem chi tiết</a>
+                        <a href="{{ route('nqadmin::shoping.detail.get',['id'=>$row->id]) }}" class="btn btn-primary btnfull">Đặt hàng</a>
                     </div>
                 </div>
             </div>
             @endforeach
-
         </div>
     </div>
 

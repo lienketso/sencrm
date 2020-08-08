@@ -20,8 +20,8 @@
         <div class="container">
             <div class="row  align-items-center justify-content-between">
                 <div class="col-11 col-sm-12 page-title">
-                    <h3><i class="fa fa-sitemap "></i>Gói sản phẩm</h3>
-                    <p>Danh sách gói sản phẩm</p>
+                    <h3><i class="fa fa-sitemap "></i>Gói {{ ($type=='product') ? 'Sản phẩm' : 'Dịch vụ' }}</h3>
+                    <p>Danh sách gói {{ ($type=='product') ? 'Sản phẩm' : 'Dịch vụ' }}</p>
                 </div>
             </div>
 

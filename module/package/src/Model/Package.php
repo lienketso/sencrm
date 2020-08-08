@@ -8,7 +8,7 @@ use Product\Model\Product;
 class Package extends Model
 {
     protected $table = 'package';
-    protected $fillable = ['name','price','description','content','is_order','status'];
+    protected $fillable = ['name','price','description','content','is_order', 'type','status'];
 
 
     public function setPriceAttribute($val)

@@ -20,6 +20,7 @@ class CreatePackageTable extends Migration
             $table->text('content')->nullable();
             $table->double('price')->default(0); //Giá trị gói
             $table->integer('is_order')->default(0); //Thứ tự sắp xếp
+            $table->string('type')->default('product'); //Thứ tự sắp xếp
             $table->enum('status',['active','disable'])->default('active'); //Trạng thái hiển thị
             $table->timestamps();
         });

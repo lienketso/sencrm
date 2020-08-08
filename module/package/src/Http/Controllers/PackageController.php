@@ -17,11 +17,12 @@ class PackageController extends BaseController
     {
         $this->p = $packageRepositories;
     }
-    public function getIndex(){
-        $data = $this->p->scopeQuery(function ($e){
-           return $e->orderBy('created_at','desc');
+    public function getIndex(Request $request){
+        $type = $request->get('type');
+        $data = $this->p->scopeQuery(function ($e) use($type){
+           return $e->orderBy('created_at','desc')->where('type',$type);
         })->paginate(10);
-        return view('nqadmin-package::index',['data'=>$data]);
+        return view('nqadmin-package::index',['data'=>$data,'type'=>$type]);
     }
     public function getCreate(){
         return view('nqadmin-package::create');

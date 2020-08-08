@@ -15,7 +15,7 @@ use Package\Model\Package;
 class Product extends Model
 {
     protected $table='product';
-    protected $fillable = [ 'name', 'slug', 'code_name', 'excerpt', 'weight', 'price', 'discount', 'thumbnail', 'unit', 'status'];
+    protected $fillable = [ 'name', 'slug', 'code_name', 'excerpt', 'weight', 'price', 'discount', 'thumbnail', 'unit', 'type', 'status'];
 
     public function setPriceAttribute($val)
     {

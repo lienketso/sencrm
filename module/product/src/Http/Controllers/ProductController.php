@@ -9,6 +9,7 @@
 namespace Product\Http\Controllers;
 use Base\Supports\FlashMessage;
 use Barryvdh\Debugbar\Controllers\BaseController;
+use Illuminate\Http\Request;
 use Package\Model\Package;
 use Package\Repositories\PackageRepositories;
 use Product\Repositories\ProductRepositories;
@@ -25,17 +26,21 @@ class ProductController extends BaseController
         $this->pa = $packageRepositories;
     }
 
-    public function getIndex(){
-        $data = $this->lt->scopeQuery(function ($e){
-            return $e->orderBy('created_at','desc')->where('status',1);
+    public function getIndex(Request $request){
+        $type = $request->get('type');
+        $data = $this->lt->scopeQuery(function ($e) use($type){
+            return $e->orderBy('created_at','desc')->where('status',1)->where('type',$type);
         })
             ->paginate(10);
-        return view('nqadmin-product::index',['data'=>$data]);
+        return view('nqadmin-product::index',['data'=>$data,'type'=>$type]);
     }
-    public function getCreate(){
-        return view('nqadmin-product::create');
+    public function getCreate(Request $request){
+        $type = $request->get('type');
+        $listPackage = $this->pa->findWhere(['status'=>1,'type'=>$type]);
+        return view('nqadmin-product::create',['listPackage'=>$listPackage,'type'=>$type]);
     }
     public function postCreate(ProductValidate $request){
+        $type = $request->get('type');
         $input = $request->except(['_token']);
         try{
         $product = $this->lt->create($input);
@@ -49,19 +54,21 @@ class ProductController extends BaseController
         }catch (\Exception $e){
             return $e->getMessage();
         }
-        return redirect()->route('nqadmin::product.index.get')->with(FlashMessage::returnMessage('create'));
+        return redirect()->route('nqadmin::product.index.get',['type'=>$type])->with(FlashMessage::returnMessage('create'));
     }
-    public function getEdit($id){
-
+    public function getEdit($id, Request $request){
+        $data = $this->lt->find($id);
+        $type = $data->type;
         //danh sách gói
         $listPackage = Package::with(['getProduct'=>function($e) use($id){
             $e->where('product_id',$id);
         }])
             ->orderBy('is_order','asc')
             ->where('status','active')
+            ->where('type',$type)
             ->get();
         //dd($listPackage);die;
-        $data = $this->lt->find($id);
+
         if(empty($data)){
             return redirect()->route('nqadmin::product.index.get')->with(['message'=>'No database !']);
         }
@@ -69,7 +76,7 @@ class ProductController extends BaseController
     }
     public function postEdit($id, ProductValidate $request){
         $input = $request->except(['_token']);
-
+        $info = $this->lt->find($id);
         try{
             //edit product
             $product = $this->lt->update($input,$id);
@@ -84,13 +91,12 @@ class ProductController extends BaseController
             }
             $product->getPackage()->sync($syncData);
 
-            //$product->getPackage()->sync($request->package_id,['package_price'=>$request->package_price]);
 
         }catch (\Exception $e){
             return $e->getMessage();
         }
 
-        return redirect()->route('nqadmin::product.index.get')->with(FlashMessage::returnMessage('create'));
+        return redirect()->route('nqadmin::product.index.get',['type'=>$info->type])->with(FlashMessage::returnMessage('create'));
     }
     public function getDelete($id){
         return getDelete($id,$this->lt);

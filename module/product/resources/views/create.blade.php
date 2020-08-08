@@ -47,8 +47,8 @@
                         </div>
                     @endforeach
                 @endif
-
                 {{csrf_field()}}
+                    <input type="hidden" name="type" value="{{$type}}">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
@@ -103,6 +103,19 @@
                                            value="{{old('price')}}"
                                     >
                                 </div>
+
+                                    @foreach($listPackage as $row)
+                                        <div class="form-group">
+                                            <input type="hidden" name="package_id[]" value="{{$row->id}}">
+                                            <label class="form-control-label">Giá {{$row->name}} ( VNĐ )</label>
+                                            <input type="text"
+                                                   class="form-control"
+                                                   autocomplete="off"
+                                                   name="package_price[]"
+                                                   value="{{old('package_price')}}"
+                                            >
+                                        </div>
+                                    @endforeach
 
                                 <div class="form-group">
                                     <label class="form-control-label">Mô tả sản phẩm</label>
